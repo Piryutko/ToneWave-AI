@@ -138,7 +138,7 @@
             class="group relative overflow-hidden bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-2xl text-white font-bold text-lg md:text-xl py-5 px-14 rounded-[32px] shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(45,212,191,0.2)] hover:border-[#2DD4BF]/50 active:scale-95"
         >
             <span class="relative z-10 flex items-center gap-3">
-                Войти в приложение
+                Начать работу
                 <svg
                     class="w-6 h-6 transition-transform group-hover:translate-x-1 text-[#2DD4BF]"
                     fill="none"
