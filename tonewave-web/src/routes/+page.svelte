@@ -36,17 +36,16 @@
         resultText = "";
 
         try {
-            const response = await fetch(
-                "http://localhost:5000/api/transform",
-                {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        text: rawText,
-                        mode: selectedMode,
-                    }),
-                },
-            );
+            const apiUrl =
+                import.meta.env.VITE_API_URL || "http://localhost:5000";
+            const response = await fetch(`${apiUrl}/api/transform`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    text: rawText,
+                    mode: selectedMode,
+                }),
+            });
 
             if (!response.ok || !response.body) {
                 throw new Error("Failed to connect to backend");
