@@ -27,7 +27,8 @@ app.UseCors();
 app.MapPost("/api/transform", async (
     [FromBody] TransformRequest request, 
     HttpContext context,
-    ILogger<Program> logger) =>
+    ILogger<Program> logger,
+    IConfiguration config) =>
 {
     // Настраиваем заголовки для Server-Sent Events (SSE)
     context.Response.Headers.Append("Content-Type", "text/event-stream");
@@ -56,7 +57,8 @@ app.MapPost("/api/transform", async (
     using var httpClient = new HttpClient();
     var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
     
-    using var requestMessage = new HttpRequestMessage(HttpMethod.Post, "http://localhost:11434/api/generate");
+    var ollamaUrl = config["OllamaUrl"] ?? "http://localhost:11434/api/generate";
+    using var requestMessage = new HttpRequestMessage(HttpMethod.Post, ollamaUrl);
     requestMessage.Content = content;
 
     try
