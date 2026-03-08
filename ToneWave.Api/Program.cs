@@ -21,12 +21,15 @@ app.UseCors();
 
 app.MapPost("/api/transform", async (
     [FromBody] TransformRequest request, 
-    HttpContext context) =>
+    HttpContext context,
+    ILogger<Program> logger) =>
 {
     // Настраиваем заголовки для Server-Sent Events (SSE)
     context.Response.Headers.Append("Content-Type", "text/event-stream");
     context.Response.Headers.Append("Cache-Control", "no-cache");
     context.Response.Headers.Append("Connection", "keep-alive");
+
+    logger.LogInformation("Received transform request. Mode: {Mode}, Text Length: {Length}", request.Mode, request.Text.Length);
 
     var systemPrompt = request.Mode.ToUpper() switch
     {
@@ -57,6 +60,8 @@ app.MapPost("/api/transform", async (
         using var response = await httpClient.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead, context.RequestAborted);
         response.EnsureSuccessStatusCode();
 
+        logger.LogInformation("Successfully connected to Ollama. Streaming response...");
+
         using var stream = await response.Content.ReadAsStreamAsync(context.RequestAborted);
         using var reader = new StreamReader(stream);
 
@@ -69,9 +74,12 @@ app.MapPost("/api/transform", async (
             await context.Response.WriteAsync($"data: {line}\n\n", context.RequestAborted);
             await context.Response.Body.FlushAsync(context.RequestAborted);
         }
+        
+        logger.LogInformation("Successfully completed stream for request.");
     }
     catch (Exception ex)
     {
+        logger.LogError(ex, "Failed to stream transformation response.");
         var errorPayload = JsonSerializer.Serialize(new { error = ex.Message });
         await context.Response.WriteAsync($"data: {errorPayload}\n\n", context.RequestAborted);
         await context.Response.Body.FlushAsync(context.RequestAborted);

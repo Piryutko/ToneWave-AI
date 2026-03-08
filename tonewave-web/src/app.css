@@ -1,10 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-500: #3b82f6;
-  --color-brand-600: #2563eb;
+  --color-mint-400: #34d399;
+  --color-mint-500: #2DD4BF;
+  --color-mint-600: #0d9488;
+  --color-darkgreen-900: #0A120E;
 }
 
 body {
-  @apply bg-slate-900 text-slate-100 font-sans antialiased min-h-screen;
+  @apply bg-[#0A120E] text-slate-100 font-sans antialiased min-h-screen selection:bg-mint-500/30 selection:text-teal-100;
 }

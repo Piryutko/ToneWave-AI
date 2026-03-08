@@ -21,3 +21,4 @@ C:\Users\Maks\Desktop\Projects\ToneWave AI\ToneWave.Api\obj\Debug\net8.0\refint\
 C:\Users\Maks\Desktop\Projects\ToneWave AI\ToneWave.Api\obj\Debug\net8.0\ToneWave.Api.pdb
 C:\Users\Maks\Desktop\Projects\ToneWave AI\ToneWave.Api\obj\Debug\net8.0\ToneWave.Api.genruntimeconfig.cache
 C:\Users\Maks\Desktop\Projects\ToneWave AI\ToneWave.Api\obj\Debug\net8.0\ref\ToneWave.Api.dll
+C:\Users\Maks\Desktop\Projects\ToneWave AI\ToneWave.Api\obj\Debug\net8.0\ToneWave.Api.sourcelink.json

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Maks\\Desktop\\Projects\\ToneWave AI\\ToneWave.Api\\ToneWave.Api.csproj": {}
+    "C:\\Users\\Maks\\Desktop\\Projects\\ToneWave AI\\tonewave.api\\ToneWave.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Maks\\Desktop\\Projects\\ToneWave AI\\ToneWave.Api\\ToneWave.Api.csproj": {
+    "C:\\Users\\Maks\\Desktop\\Projects\\ToneWave AI\\tonewave.api\\ToneWave.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maks\\Desktop\\Projects\\ToneWave AI\\ToneWave.Api\\ToneWave.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Maks\\Desktop\\Projects\\ToneWave AI\\tonewave.api\\ToneWave.Api.csproj",
         "projectName": "ToneWave.Api",
-        "projectPath": "C:\\Users\\Maks\\Desktop\\Projects\\ToneWave AI\\ToneWave.Api\\ToneWave.Api.csproj",
+        "projectPath": "C:\\Users\\Maks\\Desktop\\Projects\\ToneWave AI\\tonewave.api\\ToneWave.Api.csproj",
         "packagesPath": "C:\\Users\\Maks\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maks\\Desktop\\Projects\\ToneWave AI\\ToneWave.Api\\obj\\",
+        "outputPath": "C:\\Users\\Maks\\Desktop\\Projects\\ToneWave AI\\tonewave.api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Maks\\AppData\\Roaming\\NuGet\\NuGet.Config"

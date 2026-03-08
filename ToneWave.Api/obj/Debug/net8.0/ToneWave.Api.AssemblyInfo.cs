@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ToneWave.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b56f5609a8fde5ede514d8685915abbe730fe325")]
 [assembly: System.Reflection.AssemblyProductAttribute("ToneWave.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ToneWave.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
