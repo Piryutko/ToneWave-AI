@@ -4,16 +4,21 @@ using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Добавляем CORS для SvelteKit (который обычно крутится на портах 5173 или 4173)
+// Добавляем CORS для SvelteKit (локально и на Netlify)
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("http://localhost:5173", "http://localhost:4173")
+        policy.WithOrigins(
+                  "http://localhost:5173", 
+                  "http://localhost:4173", 
+                  "https://tonewave-ai.netlify.app"
+              )
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
 });
+
 
 var app = builder.Build();
 
