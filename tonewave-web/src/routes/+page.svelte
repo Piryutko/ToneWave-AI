@@ -11,6 +11,18 @@
     let selectedTemplateIndex = $state<number | null>(null);
     let resultText = $state("");
     let isProcessing = $state(false);
+    let copied = $state(false);
+
+    async function handleCopy() {
+        if (!resultText) return;
+        try {
+            await navigator.clipboard.writeText(resultText);
+            copied = true;
+            setTimeout(() => (copied = false), 2000);
+        } catch (err) {
+            console.error("Failed to copy:", err);
+        }
+    }
 
     const modes: {
         id: TransformMode;
@@ -450,9 +462,20 @@
 
                             {#if resultText && !isProcessing}
                                 <button
-                                    class="mt-5 w-full py-5 rounded-[20px] bg-white/5 border border-white/10 text-base font-bold text-teal-100/60 hover:bg-white/10 transition-all font-black uppercase tracking-widest"
+                                    onclick={handleCopy}
+                                    class="mt-5 w-full py-5 rounded-[20px] border transition-all font-black uppercase tracking-widest flex items-center justify-center gap-3
+                                        {copied 
+                                            ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400' 
+                                            : 'bg-white/5 border-white/10 text-teal-100/60 hover:bg-white/10 hover:border-white/20'}"
                                 >
-                                    Копировать результат
+                                    {#if copied}
+                                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        Скопировано!
+                                    {:else}
+                                        Копировать результат
+                                    {/if}
                                 </button>
                             {/if}
                         </div>
