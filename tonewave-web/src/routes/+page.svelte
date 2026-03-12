@@ -28,7 +28,7 @@
             copied: "Скопировано!",
             error: "⚠️ Возникла ошибка при трансформации сообщения.",
             emptyResult: "Здесь появится исправленный текст после запуска трансформации",
-            roadmapBtn: "Инвестиционный план",
+            roadmapBtn: "Для инвесторов",
             roadmapTitle: "Стратегия развития ToneWave AI",
             roadmapIntro: "ToneWave AI — это не просто демо, а фундамент для мощной экосистемы коммуникаций. Ниже представлен план масштабирования проекта для потенциальных инвесторов.",
             phase1Title: "Фаза 1: Продакшн-инфраструктура",
@@ -60,7 +60,7 @@
             copied: "Copied!",
             error: "⚠️ An error occurred during transformation.",
             emptyResult: "Corrected text will appear here after transformation",
-            roadmapBtn: "Investment Roadmap",
+            roadmapBtn: "For Investors",
             roadmapTitle: "ToneWave AI Growth Strategy",
             roadmapIntro: "ToneWave AI is not just a demo, but the foundation for a powerful communication ecosystem. Below is the scaling plan for potential investors.",
             phase1Title: "Phase 1: Production Infrastructure",
@@ -92,7 +92,7 @@
             copied: "コピーしました！",
             error: "⚠️ 変換中にエラーが発生しました。",
             emptyResult: "変換後にここに修正されたテキストが表示されます",
-            roadmapBtn: "投資ロードマップ",
+            roadmapBtn: "投資家向け",
             roadmapTitle: "ToneWave AI 成長戦略",
             roadmapIntro: "ToneWave AIは単なるデモではなく、強力なコミュニケーションエコシステムの基盤です。以下は潜在的な投資家向けののスケーリングプランです。",
             phase1Title: "フェーズ1: 本番インフラストラクチャ",
@@ -254,12 +254,12 @@
             {/each}
         </div>
 
-        <!-- Investment Badge (Stubtle) -->
+        <!-- Investment Badge (Stubtle but visible) -->
         <button
             onclick={() => (isRoadmapOpen = true)}
-            class="group flex items-center gap-2 px-3 py-1.5 text-[9px] font-bold tracking-[0.2em] text-white/20 hover:text-[#2DD4BF] transition-all uppercase"
+            class="group flex items-center gap-2 px-3 py-1.5 text-[10px] font-black tracking-[0.2em] text-white/40 hover:text-[#2DD4BF] transition-all uppercase bg-white/5 border border-white/5 rounded-full hover:border-[#2DD4BF]/30"
         >
-            <span class="w-1 h-1 rounded-full bg-current opacity-50"></span>
+            <span class="w-1 h-1 rounded-full bg-[#2DD4BF] animate-pulse"></span>
             {t.roadmapBtn}
         </button>
     </div>
