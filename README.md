@@ -2,6 +2,8 @@
 
 [Russian (RU)](#russian-ru) | [English (EN)](#english-en) | [Japanese (JP)](#japanese-jp)
 
+### 🔗 Live Demo: [tonewave-ai.netlify.app](https://tonewave-ai.netlify.app/)
+
 ---
 
 ## English (EN)
@@ -21,11 +23,6 @@
 *   **Messenger Ecosystem**: Simulated integration with Slack, Telegram, MS Teams, and Discord.
 *   **Enterprise Extensibility**: "Custom Connection" demo for integrating any third-party webhook.
 *   **Investment Plan**: Built-in roadmap and ROI infographics for potential stakeholders.
-
-### 📦 Tech Stack
-*   **Framework**: SvelteKit 5 + TypeScript
-*   **Styling**: Tailwind CSS v4
-*   **Architecture**: Frontend-only POC (Instant demonstration capabilities)
 
 ---
 
@@ -65,7 +62,7 @@
 *   **プレミアムUI/UX**: グラスモーフィズムを採用したモダンなデザインと、リアルタイムのタイピングエフェクト。
 *   **メッセンジャー連携**: Slack、Telegram、Teams、Discordへの送信シミュレーション。
 *   **エンタープライズ拡張性**: サードパーティのウェブフックを統合するカスタム接続デモ。
-*   **投資ロードマップ**: 将来の成長戦略と収益予測のインフォグラフィック。
+*   **投資ロードナビ**: 将来の成長戦略と収益予測のインフォグラフィック。
 
 ---
 
