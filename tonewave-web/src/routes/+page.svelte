@@ -1,32 +1,41 @@
 <script lang="ts">
-    import { simulateStreamingResponse, type TransformMode } from "$lib/simulation";
+    import {
+        simulateStreamingResponse,
+        type TransformMode,
+    } from "$lib/simulation";
     import { fade, slide } from "svelte/transition";
 
     let showApp = $state(false);
     let rawText = $state("");
     let selectedMode = $state<TransformMode>("PROFESSIONAL");
+    let selectedTemplateIndex = $state<number | null>(null);
     let resultText = $state("");
     let isProcessing = $state(false);
 
-    const modes: { id: TransformMode; icon: string; label: string; desc: string }[] = [
+    const modes: {
+        id: TransformMode;
+        icon: string;
+        label: string;
+        desc: string;
+    }[] = [
         {
             id: "PROFESSIONAL",
             icon: "👔",
             label: "Professional",
-            desc: "Деловой стиль и конструктив",
+            desc: "Деловой стиль",
         },
-        { id: "KIND", icon: "💖", label: "Kind", desc: "Эмпатия и поддержка" },
+        { id: "KIND", icon: "💖", label: "Kind", desc: "Эмпатия" },
         {
             id: "TECHNICAL",
             icon: "⚙️",
             label: "Technical",
-            desc: "Строгая аналитика",
+            desc: "Аналитика",
         },
         {
             id: "LACONIC",
             icon: "⚡",
             label: "Laconic",
-            desc: "Коротко и по делу",
+            desc: "Коротко",
         },
     ];
 
@@ -35,19 +44,37 @@
             title: "Гневный крик",
             text: "ПОЧЕМУ НИЧЕГО НЕ ГОТОВО?",
             icon: "🤬",
-            desc: "Эмоциональное требование статуса",
+            desc: "Эмоциональный запрос",
         },
         {
             title: "Паника",
             text: "ЗАКАЗЧИК РУГАЕТСЯ ПОЧЕМУ УПАЛ ПРОДАКШЕН!?",
             icon: "🚨",
-            desc: "Хаотичное сообщение о сбое",
+            desc: "Сообщение о сбое",
         },
         {
             title: "Агрессия",
             text: "ПОЧЕМУ ЭФФЕКТИВНОСТЬ КОМАНДЫ НИЗКАЯ?! ВЫ ЧТО НЕ МОЖЕТЕ СПИСАТЬСЯ И ЗА ТРИ МИНУТЫ РЕШИТ ВОПРОС??",
             icon: "😤",
             desc: "Прямая претензия к команде",
+        },
+        {
+            title: "Сарказм",
+            text: "Опять переделывать? Вы вообще умеете читать ТЗ с первого раза?",
+            icon: "😒",
+            desc: "Недовльство качеством работы",
+        },
+        {
+            title: "Ультиматум",
+            text: "Если к завтрашнему утру баг не будет исправлен, я буду вынужден поднять вопрос о вашей компетенции.",
+            icon: "😠",
+            desc: "Жесткое требование правок",
+        },
+        {
+            title: "Раздражение",
+            text: "Сколько можно обсуждать одно и то же на созвонах? Давайте уже работать, а не болтать.",
+            icon: "🙄",
+            desc: "Усталость от совещаний",
         },
     ];
 
@@ -58,9 +85,7 @@
         resultText = "";
 
         try {
-            // POC Transformation: Using simulated streaming instead of real backend
             const stream = simulateStreamingResponse(rawText, selectedMode);
-            
             for await (const chunk of stream) {
                 resultText += chunk;
             }
@@ -77,348 +102,377 @@
     <title>ToneWave AI</title>
 </svelte:head>
 
-{#if !showApp}
-    <!-- Лэндинг -->
-    <div
-        class="flex flex-col items-center justify-center text-center w-full max-w-5xl mx-auto h-full px-4"
-        in:fade={{ duration: 1000, delay: 100 }}
-        out:fade={{ duration: 400 }}
-    >
+<main
+    class="relative w-full h-screen overflow-hidden bg-[#050A08] text-teal-50 font-sans selection:bg-[#2DD4BF]/30"
+>
+    <!-- Background Glows -->
+    <div class="fixed inset-0 pointer-events-none">
         <div
-            class="inline-flex items-center gap-3 px-5 py-2.5 rounded-[32px] bg-white/5 border border-white/10 backdrop-blur-xl mb-10 shadow-inner shadow-white/5 saturate-150"
-        >
-            <span
-                class="w-2.5 h-2.5 rounded-full bg-[#2DD4BF] animate-pulse shadow-[0_0_12px_#2DD4BF]"
-            ></span>
-            <span
-                class="text-sm font-medium tracking-wide text-teal-50/80 uppercase"
-                >AI-редактор коммуникаций</span
-            >
-        </div>
-
-        <h1
-            class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-tight py-4"
-        >
-            <span
-                class="text-transparent bg-clip-text bg-gradient-to-br from-white via-teal-100 to-teal-800"
-                style="padding-bottom: 0.1em;">ToneWave</span
-            >
-            <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-[#2DD4BF] to-teal-400"
-                style="padding-bottom: 0.1em;">AI</span
-            >
-        </h1>
-
-        <p
-            class="text-lg md:text-2xl text-teal-100/60 font-medium max-w-2xl mb-14 leading-relaxed"
-        >
-            Превратите любые искренние эмоции в дипломатичный и конструктивный
-            диалог. Решайте конфликты профессионально.
-        </p>
-
-        <button
-            onclick={() => (showApp = true)}
-            class="group relative overflow-hidden bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-2xl text-white font-bold text-lg md:text-xl py-5 px-14 rounded-[32px] shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(45,212,191,0.2)] hover:border-[#2DD4BF]/50 active:scale-95"
-        >
-            <span class="relative z-10 flex items-center gap-3">
-                Начать работу
-                <svg
-                    class="w-6 h-6 transition-transform group-hover:translate-x-1 text-[#2DD4BF]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                </svg>
-            </span>
-            <div
-                class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent"
-            ></div>
-        </button>
+            class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-teal-900/20 rounded-full blur-[120px] animate-pulse"
+        ></div>
+        <div
+            class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-teal-800/10 rounded-full blur-[120px] animate-pulse"
+            style="animation-delay: 2s"
+        ></div>
     </div>
-{:else}
-    <!-- Основной функционал -->
-    <div
-        class="w-full max-w-5xl mx-auto w-full pt-8"
-        in:fade={{ duration: 600, delay: 200 }}
-    >
-        <!-- Header -->
-        <div class="flex items-center justify-between mb-12">
-            <button
-                onclick={() => (showApp = false)}
-                class="text-teal-500 hover:text-[#2DD4BF] transition-colors p-2 rounded-full hover:bg-white/5 flex items-center gap-2 text-sm font-semibold"
+
+    <div class="grid grid-cols-1 grid-rows-1 h-full w-full">
+        {#if !showApp}
+            <!-- Лэндинг -->
+            <div
+                class="col-start-1 row-start-1 flex flex-col items-center justify-center text-center w-full max-w-5xl mx-auto h-full px-4 z-10"
+                in:fade={{ duration: 1000, delay: 100 }}
+                out:fade={{ duration: 400 }}
             >
-                <svg
-                    class="w-5 h-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                    />
-                </svg>
-                Назад
-            </button>
-            <h1
-                class="text-3xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-teal-200"
-            >
-                ToneWave AI
-            </h1>
-            <div class="w-20"></div>
-            <!-- Spacer -->
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
-            <!-- Left Column: Input and Controls -->
-            <div class="lg:col-span-5 space-y-6">
                 <div
-                    class="bg-white/5 backdrop-blur-2xl border border-white/10 saturate-150 rounded-[24px] p-6 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-                >
-                    <p
-                        class="block text-sm font-bold text-teal-100/70 mb-4 uppercase tracking-wider"
-                    >
-                        Шаблоны
-                    </p>
-                    <div class="space-y-3">
-                        {#each templates as template}
-                            <button
-                                onclick={() => (rawText = template.text)}
-                                class="w-full flex items-center gap-4 p-4 rounded-[20px] bg-black/20 border border-white/5 hover:bg-[#2DD4BF]/10 hover:border-[#2DD4BF]/30 transition-all text-left group relative overflow-hidden active:scale-[0.98]"
-                            >
-                                <span
-                                    class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform shadow-inner border border-white/5"
-                                >
-                                    {template.icon}
-                                </span>
-                                <div class="flex-grow min-w-0">
-                                    <p class="font-bold text-slate-100 text-sm mb-0.5 truncate uppercase tracking-tight">
-                                        {template.title}
-                                    </p>
-                                    <p class="text-[11px] text-teal-100/50 group-hover:text-teal-100/70 transition-colors line-clamp-1">
-                                        {template.desc}
-                                    </p>
-                                </div>
-                                <svg
-                                    class="w-5 h-5 text-teal-100/20 group-hover:text-[#2DD4BF] transition-colors"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M9 5l7 7-7 7"
-                                    />
-                                </svg>
-                            </button>
-                        {/each}
-                    </div>
-                </div>
-
-                <div
-                    class="bg-white/5 backdrop-blur-2xl border border-white/10 saturate-150 rounded-[24px] p-6 shadow-[0_8px_32px_rgba(0,0,0,0.4)] transition-all"
-                >
-                    <label
-                        for="message"
-                        class="block text-sm font-bold text-teal-100/70 mb-3 uppercase tracking-wider"
-                    >
-                        Оригинальное сообщение
-                    </label>
-                    <textarea
-                        id="message"
-                        bind:value={rawText}
-                        readonly
-                        placeholder="Выберите один из сценариев выше..."
-                        class="w-full bg-[#0A120E]/30 text-teal-50/70 border border-white/10 rounded-[20px] p-5 min-h-[140px] focus:ring-1 focus:ring-[#2DD4BF]/30 focus:border-transparent transition resize-none placeholder-teal-800/50 outline-none saturate-100 cursor-default"
-                    ></textarea>
-                </div>
-
-                <div
-                    class="bg-white/5 backdrop-blur-2xl border border-white/10 saturate-150 rounded-[24px] p-6 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-                >
-                    <p
-                        class="block text-sm font-bold text-teal-100/70 mb-4 uppercase tracking-wider"
-                    >
-                        Стиль общения
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {#each modes as mode}
-                            <button
-                                onclick={() => (selectedMode = mode.id)}
-                                class="flex flex-col items-start p-4 rounded-[20px] border transition-all text-left group overflow-hidden relative
-                                    {selectedMode === mode.id
-                                    ? 'bg-[#2DD4BF]/10 border-[#2DD4BF]/50 shadow-[0_0_20px_rgba(45,212,191,0.15)] saturate-150'
-                                    : 'bg-black/20 border-white/5 hover:bg-white/5'}"
-                            >
-                                <span
-                                    class="flex items-center gap-2 mb-1 relative z-10"
-                                >
-                                    <span class="text-xl">{mode.icon}</span>
-                                    <span class="font-bold text-slate-100"
-                                        >{mode.label}</span
-                                    >
-                                </span>
-                                <span
-                                    class="text-xs text-teal-100/50 group-hover:text-teal-100/70 transition-colors relative z-10"
-                                >
-                                    {mode.desc}
-                                </span>
-                            </button>
-                        {/each}
-                    </div>
-                </div>
-
-                <button
-                    onclick={handleTransform}
-                    disabled={isProcessing || !rawText.trim()}
-                    class="w-full relative overflow-hidden group bg-[#2DD4BF] text-[#0A120E] font-black tracking-wide text-lg rounded-[24px] py-5 shadow-[0_10px_30px_rgba(45,212,191,0.3)] hover:shadow-[0_10px_40px_rgba(45,212,191,0.5)] transition-all disabled:opacity-50 disabled:cursor-not-allowed transform hover:-translate-y-1 active:translate-y-0 disabled:transform-none"
+                    class="inline-flex items-center gap-3 px-5 py-2.5 rounded-[32px] bg-white/5 border border-white/10 backdrop-blur-xl mb-10 shadow-inner shadow-white/5 saturate-150"
                 >
                     <span
-                        class="relative z-10 flex items-center justify-center gap-2"
+                        class="w-2.5 h-2.5 rounded-full bg-[#2DD4BF] animate-pulse shadow-[0_0_12px_#2DD4BF]"
+                    ></span>
+                    <span
+                        class="text-sm font-medium tracking-wide text-teal-50/80 uppercase"
+                        >AI-редактор коммуникаций</span
                     >
-                        {#if isProcessing}
-                            <svg
-                                class="animate-spin h-6 w-6 text-[#0A120E]"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                            >
-                                <circle
-                                    class="opacity-25"
-                                    cx="12"
-                                    cy="12"
-                                    r="10"
-                                    stroke="currentColor"
-                                    stroke-width="4"
-                                ></circle>
-                                <path
-                                    class="opacity-75"
-                                    fill="currentColor"
-                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                ></path>
-                            </svg>
-                            Трансформация...
-                        {:else}
-                            <span class="text-2xl">✨</span> Трансформировать
-                        {/if}
+                </div>
+
+                <h1
+                    class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-tight py-4"
+                >
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-br from-white via-teal-100 to-teal-800"
+                        style="padding-bottom: 0.1em;">ToneWave</span
+                    >
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-[#2DD4BF] to-teal-400"
+                        style="padding-bottom: 0.1em;">AI</span
+                    >
+                    <span
+                        class="block text-[10px] uppercase tracking-[0.4em] text-white/30 font-medium mt-2"
+                    >
+                        Conceptual Demo
+                    </span>
+                    <a
+                        href="https://github.com/Piryutko"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="block text-[9px] uppercase tracking-[0.2em] text-[#2DD4BF]/40 hover:text-[#2DD4BF] transition-colors font-bold mt-4"
+                    >
+                        github.com/Piryutko
+                    </a>
+                </h1>
+
+                <p
+                    class="text-lg md:text-2xl text-teal-100/60 font-medium max-w-2xl mb-14 leading-relaxed"
+                >
+                    Превратите любые искренние эмоции в дипломатичный и
+                    конструктивный диалог. Решайте конфликты профессионально.
+                </p>
+
+                <button
+                    onclick={() => (showApp = true)}
+                    class="group relative overflow-hidden bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-2xl text-white font-bold text-lg md:text-xl py-5 px-14 rounded-[32px] shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(45,212,191,0.2)] hover:border-[#2DD4BF]/50 active:scale-95"
+                >
+                    <span class="relative z-10 flex items-center gap-3">
+                        Начать работу
+                        <svg
+                            class="w-6 h-6 transition-transform group-hover:translate-x-1 text-[#2DD4BF]"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6"
+                            />
+                        </svg>
                     </span>
                     <div
-                        class="absolute inset-0 h-full w-full opacity-0 group-hover:opacity-20 transition-opacity bg-white"
+                        class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent"
                     ></div>
                 </button>
             </div>
-
-            <!-- Right Column: Result Output -->
-            <div class="lg:col-span-7">
-                <div
-                    class="bg-white/5 backdrop-blur-3xl border border-white/10 saturate-150 rounded-[32px] p-8 h-full min-h-[500px] shadow-[0_15px_50px_rgba(0,0,0,0.5)] relative overflow-hidden flex flex-col"
-                >
-                    <!-- Subtle inner glow -->
-                    <div
-                        class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-[#2DD4BF]/10 rounded-full blur-[80px] pointer-events-none"
-                    ></div>
-
-                    <div
-                        class="flex items-center justify-between mb-8 pb-5 border-b border-white/10 relative z-10"
+        {:else}
+            <!-- Основной функционал -->
+            <div
+                class="col-start-1 row-start-1 w-full max-w-[1700px] mx-auto px-10 py-10 min-h-screen flex flex-col justify-center z-20"
+                in:fade={{ duration: 600, delay: 200 }}
+            >
+                <!-- Header enriched, similar to landing but more compact -->
+                <div class="flex flex-col items-center mb-10 relative">
+                    <button
+                        onclick={() => (showApp = false)}
+                        class="absolute left-0 top-2 text-teal-500 hover:text-[#2DD4BF] transition-colors p-2 rounded-full hover:bg-white/5 flex items-center gap-2 text-sm font-semibold"
                     >
-                        <h2
-                            class="text-xl font-black text-teal-50 flex items-center gap-3"
+                        <svg
+                            class="w-5 h-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
                         >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                            />
+                        </svg>
+                        Назад
+                    </button>
+
+                    <h1 class="text-3xl font-black tracking-tight text-center">
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-white to-teal-200"
+                            >ToneWave AI</span
+                        >
+                        <div class="flex flex-col items-center mt-2 gap-1">
                             <span
-                                class="w-10 h-10 rounded-full bg-[#2DD4BF]/20 text-[#2DD4BF] flex items-center justify-center border border-[#2DD4BF]/30 shadow-[0_0_15px_rgba(45,212,191,0.2)]"
+                                class="text-[10px] uppercase tracking-[0.4em] text-white/20 font-medium"
+                                >Conceptual Demo</span
                             >
-                                <svg
-                                    class="w-5 h-5"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 13l4 4L19 7"
-                                    />
-                                </svg>
-                            </span>
-                            Результат
-                        </h2>
-                        {#if resultText}
-                            <button
-                                class="text-sm font-bold text-teal-100/60 hover:text-white bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 px-4 py-2 rounded-[16px] transition-all flex items-center gap-2 shadow-sm"
+                            <a
+                                href="https://github.com/Piryutko"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-[9px] uppercase tracking-[0.2em] text-[#2DD4BF]/30 hover:text-[#2DD4BF] transition-colors font-bold"
                             >
-                                <svg
-                                    class="w-4 h-4"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                                    />
-                                </svg>
-                                Копировать
-                            </button>
-                        {/if}
+                                github.com/Piryutko
+                            </a>
+                        </div>
+                    </h1>
+                </div>
+
+                <!-- 3-Column Layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-3 items-start">
+                    <!-- Col 1: Templates -->
+                    <div class="lg:col-span-3 lg:h-[640px] flex flex-col">
+                        <div
+                            class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[28px] p-6 shadow-2xl h-full flex flex-col"
+                        >
+                            <p
+                                class="text-[12px] font-black text-teal-100/40 mb-5 uppercase tracking-[0.2em] px-1"
+                            >
+                                Шаблоны
+                            </p>
+                            <div
+                                class="space-y-2 overflow-y-auto pr-1 flex-grow"
+                            >
+                                {#each templates as template, i}
+                                    <button
+                                        onclick={() => {
+                                            rawText = template.text;
+                                            selectedTemplateIndex = i;
+                                        }}
+                                        class="w-full flex items-center gap-3 p-3 rounded-[16px] border transition-[background-color,border-color,transform] duration-200 text-left group active:scale-[0.98]
+                                            {selectedTemplateIndex === i
+                                            ? 'bg-[#2DD4BF]/20 border-[#2DD4BF]/50 shadow-[0_0_15px_rgba(45,212,191,0.1)] saturate-150'
+                                            : 'bg-black/30 border-white/5 hover:bg-[#2DD4BF]/10 hover:border-[#2DD4BF]/20'}"
+                                    >
+                                        <span
+                                            class="text-2xl group-hover:scale-110 transition-transform"
+                                            >{template.icon}</span
+                                        >
+                                        <div class="min-w-0">
+                                            <p
+                                                class="font-bold text-slate-100 text-[15px] leading-tight uppercase tracking-tight truncate"
+                                            >
+                                                {template.title}
+                                            </p>
+                                            <p
+                                                class="text-[12px] text-teal-100/40 line-clamp-1 group-hover:text-teal-100/60"
+                                            >
+                                                {template.desc}
+                                            </p>
+                                        </div>
+                                    </button>
+                                {/each}
+                            </div>
+                        </div>
                     </div>
 
-                    <div
-                        class="flex-grow rounded-[24px] p-7 bg-[#0A120E]/40 font-medium text-teal-50/90 leading-relaxed overflow-y-auto border border-white/5 shadow-inner relative z-10 text-lg"
-                    >
-                        {#if resultText}
-                            <div in:fade={{ duration: 400 }}>
-                                {resultText}
-                                {#if isProcessing}
-                                    <span
-                                        class="inline-block w-2 h-5 ml-1 bg-[#2DD4BF] animate-pulse align-middle shadow-[0_0_8px_#2DD4BF]"
-                                    ></span>
-                                {/if}
+                    <!-- Col 2: Workspace Core -->
+                    <div class="lg:col-span-4 flex flex-col gap-3">
+                        <!-- Input Area -->
+                        <div
+                            class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[20px] p-4 shadow-2xl"
+                        >
+                            <label
+                                for="message"
+                                class="block text-[12px] font-black text-teal-100/40 mb-4 uppercase tracking-[0.2em] px-1"
+                            >
+                                Оригинальное сообщение
+                            </label>
+                            <textarea
+                                id="message"
+                                bind:value={rawText}
+                                readonly
+                                placeholder="Выберите шаблон..."
+                                class="w-full bg-black/40 text-teal-50/90 border border-white/5 rounded-[20px] p-5 h-[140px] focus:ring-1 focus:ring-[#2DD4BF]/30 transition resize-none placeholder-teal-800/40 outline-none text-lg cursor-default"
+                            ></textarea>
+                        </div>
+
+                        <!-- Style Selection -->
+                        <div
+                            class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[20px] p-4 shadow-2xl flex flex-col"
+                        >
+                            <p
+                                class="text-[12px] font-black text-teal-100/40 mb-4 uppercase tracking-[0.2em] px-1"
+                            >
+                                Стиль трансформации
+                            </p>
+                            <div class="grid grid-cols-2 gap-4 mb-5">
+                                {#each modes as mode}
+                                    <button
+                                        onclick={() => (selectedMode = mode.id)}
+                                        class="flex flex-col items-center justify-center p-5 rounded-[20px] border transition-[background-color,border-color,box-shadow,transform] duration-200 text-center gap-2.5
+                                            {selectedMode === mode.id
+                                            ? 'bg-[#2DD4BF]/20 border-[#2DD4BF]/50 shadow-[0_0_15px_rgba(45,212,191,0.1)] saturate-150'
+                                            : 'bg-black/40 border-white/5 hover:bg-white/5'}"
+                                    >
+                                        <span class="text-3xl">{mode.icon}</span
+                                        >
+                                        <span
+                                            class="font-bold text-slate-100 text-[15px]"
+                                            >{mode.label}</span
+                                        >
+                                        <span
+                                            class="text-[12px] text-teal-100/30 uppercase tracking-tighter"
+                                            >{mode.desc}</span
+                                        >
+                                    </button>
+                                {/each}
                             </div>
-                        {:else}
-                            <div
-                                class="h-full flex flex-col items-center justify-center text-teal-100/30 text-center gap-6"
+
+                            <!-- Action Button -->
+                            <button
+                                onclick={handleTransform}
+                                disabled={isProcessing || !rawText.trim()}
+                                class="w-full h-11 relative overflow-hidden group bg-gradient-to-r from-[#2DD4BF] to-[#0D9488] text-[#050A08] font-black tracking-[0.15em] text-[10px] rounded-[14px] shadow-[0_0_20px_rgba(45,212,191,0.2)] transition-all duration-300 disabled:opacity-30 disabled:saturate-50 active:scale-[0.97] uppercase"
                             >
                                 <span
-                                    class="text-7xl opacity-50 drop-shadow-2xl mix-blend-luminosity"
-                                    >🌊</span
+                                    class="relative z-10 flex items-center justify-center gap-2"
                                 >
-                                <p class="text-lg max-w-sm">
-                                    Здесь появится конструктивный ответ после
-                                    того, как вы введете сообщение.
-                                </p>
+                                    {#if isProcessing}
+                                        <svg
+                                            class="animate-spin h-4 w-4"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                        >
+                                            <circle
+                                                class="opacity-25"
+                                                cx="12"
+                                                cy="12"
+                                                r="10"
+                                                stroke="currentColor"
+                                                stroke-width="4"
+                                            ></circle>
+                                            <path
+                                                class="opacity-75"
+                                                fill="currentColor"
+                                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                            ></path>
+                                        </svg>
+                                        <span>Обработка...</span>
+                                    {:else}
+                                        <span class="opacity-80">✨</span>
+                                        <span>ТРАНСФОРМИРОВАТЬ</span>
+                                    {/if}
+                                </span>
+
+                                <!-- Hover Glow -->
+                                <div
+                                    class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                ></div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Col 3: Results -->
+                    <div class="lg:col-span-5 lg:h-[640px] flex flex-col">
+                        <div
+                            class="bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[32px] p-8 h-full shadow-2xl relative overflow-hidden flex flex-col"
+                        >
+                            <div
+                                class="flex items-center justify-between mb-5 pb-5 border-b border-white/5"
+                            >
+                                <h2
+                                    class="text-base font-black text-teal-50 flex items-center gap-4 uppercase tracking-widest"
+                                >
+                                    <span
+                                        class="w-10 h-10 rounded-full bg-[#2DD4BF]/10 text-[#2DD4BF] flex items-center justify-center border border-[#2DD4BF]/20"
+                                    >
+                                        <svg
+                                            class="w-5 h-5"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M5 13l4 4L19 7"
+                                            />
+                                        </svg>
+                                    </span>
+                                    Результат
+                                </h2>
                             </div>
-                        {/if}
+
+                            <div
+                                class="flex-grow rounded-[24px] p-6 bg-black/40 font-medium text-teal-50/90 leading-relaxed overflow-y-auto border border-white/5 relative z-10 text-[18px]"
+                            >
+                                {#if resultText}
+                                    <div in:fade={{ duration: 400 }}>
+                                        {resultText}
+                                        {#if isProcessing}
+                                            <span
+                                                class="inline-block w-2.5 h-6 ml-1 bg-[#2DD4BF] animate-pulse"
+                                            ></span>
+                                        {/if}
+                                    </div>
+                                {:else}
+                                    <div
+                                        class="h-full flex flex-col items-center justify-center text-teal-100/20 text-center gap-5"
+                                    >
+                                        <span class="text-7xl opacity-30"
+                                            >🌊</span
+                                        >
+                                        <p class="text-[15px] max-w-[260px]">
+                                            Здесь появится исправленный текст
+                                            после запуска трансформации
+                                        </p>
+                                    </div>
+                                {/if}
+                            </div>
+
+                            {#if resultText && !isProcessing}
+                                <button
+                                    class="mt-5 w-full py-5 rounded-[20px] bg-white/5 border border-white/10 text-base font-bold text-teal-100/60 hover:bg-white/10 transition-all font-black uppercase tracking-widest"
+                                >
+                                    Копировать результат
+                                </button>
+                            {/if}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        {/if}
     </div>
-{/if}
+</main>
 
 <style>
-    /* Custom scrollbar for webkit */
     ::-webkit-scrollbar {
-        width: 6px;
+        width: 4px;
     }
     ::-webkit-scrollbar-track {
         background: transparent;
     }
     ::-webkit-scrollbar-thumb {
         background: rgba(45, 212, 191, 0.2);
-        border-radius: 20px;
+        border-radius: 10px;
     }
     ::-webkit-scrollbar-thumb:hover {
         background: rgba(45, 212, 191, 0.4);
