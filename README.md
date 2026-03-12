@@ -22,7 +22,7 @@
 *   **Premium UI/UX**: Glassmorphism design with reactive animations and real-time streaming effects.
 *   **Messenger Ecosystem**: Simulated integration with Slack, Telegram, MS Teams, and Discord.
 *   **Enterprise Extensibility**: "Custom Connection" demo for integrating any third-party webhook.
-*   **Investment Plan**: Built-in roadmap and ROI infographics for potential stakeholders.
+*   **ToneWave AI Strategy**: Built-in roadmap and development milestones for team scaling and collaboration.
 
 ---
 
@@ -42,7 +42,7 @@
 *   **Premium интерфейс**: Современный дизайн в стиле Glassmorphism с плавными анимациями.
 *   **Экосистема мессенджеров**: Симуляция отправки в Slack, Telegram, Teams и Discord.
 *   **Гибкая интеграция**: Демо-режим подключения собственных сервисов через вебхуки.
-*   **Роадмап для инвесторов**: Встроенный план развития с инфографикой ARR.
+*   **Стратегия развития ToneWave AI**: Встроенный роадмап и этапы разработки для масштабирования команды и сотрудничества.
 
 ---
 
@@ -62,7 +62,7 @@
 *   **プレミアムUI/UX**: グラスモーフィズムを採用したモダンなデザインと、リアルタイムのタイピングエフェクト。
 *   **メッセンジャー連携**: Slack、Telegram、Teams、Discordへの送信シミュレーション。
 *   **エンタープライズ拡張性**: サードパーティのウェブフックを統合するカスタム接続デモ。
-*   **投資ロードナビ**: 将来の成長戦略と収益予測のインフォグラフィック。
+*   **開発戦略ロードマップ**: 将来の成長戦略と開発マイルストーンのインフォグラフィック。
 
 ---
 

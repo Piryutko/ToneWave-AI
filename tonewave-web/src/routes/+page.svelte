@@ -28,26 +28,25 @@
                 resultTitle: "Результат",
                 copyBtn: "Копировать результат",
                 copied: "Скопировано!",
-                error: "⚠️ Возникла ошибка при трансформации сообщения.",
-                emptyResult:
-                    "Здесь появится исправленный текст после запуска трансформации",
-                roadmapBtn: "Инвестиционный план",
+                error: "⚠️ Ошибка при трансформации.",
+                emptyResult: "Здесь появится исправленный текст",
+                roadmapBtn: "Стратегия развития ToneWave AI",
                 roadmapTitle: "Стратегия развития ToneWave AI",
                 roadmapIntro:
-                    "ToneWave AI — это не просто демо, а фундамент для мощной экосистемы коммуникаций. Ниже представлен план масштабирования проекта для потенциальных инвесторов.",
-                phase1Title: "Фаза 1: Продакшн-инфраструктура",
+                    "ToneWave AI — фундамент экосистемы коммуникаций. План масштабирования и сотрудничества ниже.",
+                phase1Title: "Фаза 1: Инфраструктура",
                 phase1Desc:
-                    "Переход от симуляции к реальным LLM (GPT-4o, Claude 3.5). Настройка отказоустойчивых серверов и оптимизация задержек (Latency).",
-                phase2Title: "Фаза 2: Пользовательское ядро",
+                    "Переход к реальным LLM (GPT-4o, Claude). Настройка серверов и оптимизация задержек.",
+                phase2Title: "Фаза 2: Пользователи",
                 phase2Desc:
-                    "Внедрение системы авторизации, облачного хранения истории сообщений и персональных настроек стиля для каждого пользователя.",
-                phase3Title: "Фаза 3: Экспансия экосистемы",
+                    "Система авторизации, история сообщений и настройки стиля.",
+                phase3Title: "Фаза 3: Экосистема",
                 phase3Desc:
-                    "Разработка расширений для браузеров (Chrome, Edge), плагинов для Outlook/Gmail и интеграция с корпоративными мессенджерами (Slack, Discord).",
-                phase4Title: "Фаза 4: Бизнес и монетизация",
+                    "Браузерные расширения, плагины для почты и Slack/Discord.",
+                phase4Title: "Фаза 4: Развитие",
                 phase4Desc:
-                    "Запуск модели подписок (Freemium), предоставление API для корпоративных клиентов и возможность White-label лицензирования.",
-                contactUs: "Связаться для инвестиций",
+                    "Подписки, API для бизнеса и White-label лицензирование.",
+                contactUs: "Сотрудничество и разработка",
                 phaseLabel: "Фаза",
                 joinBtn: "Присоединиться",
                 joinCopied: "Почта скопирована!",
@@ -62,7 +61,7 @@
                 sending: "Отправка...",
                 sent: "Сообщение отправлено!",
                 backToPlatforms: "К выбору платформы",
-                revenueTitle: "Прогноз выручки (ARR)",
+                revenueTitle: "Прогноз роста (ARR)",
                 pocLabel: "Текущий POC",
                 b2cLabel: "B2C Запуск",
                 b2bLabel: "Enterprise B2B",
@@ -96,25 +95,24 @@
                 copyBtn: "Copy Result",
                 copied: "Copied!",
                 error: "⚠️ An error occurred during transformation.",
-                emptyResult:
-                    "Corrected text will appear here after transformation",
-                roadmapBtn: "Investment Roadmap",
-                roadmapTitle: "ToneWave AI Growth Strategy",
+                emptyResult: "Corrected text will appear here",
+                roadmapBtn: "ToneWave AI Strategy",
+                roadmapTitle: "ToneWave AI Development Strategy",
                 roadmapIntro:
-                    "ToneWave AI is not just a demo, but the foundation for a powerful communication ecosystem. Below is the scaling plan for potential investors.",
-                phase1Title: "Phase 1: Production Infrastructure",
+                    "ToneWave AI is core to an ecosystem. Scaling plan and collaboration options below.",
+                phase1Title: "Phase 1: Infrastructure",
                 phase1Desc:
-                    "Transition from simulation to real LLMs (GPT-4o, Claude 3.5). Setting up high-availability servers and latency optimization.",
+                    "Transition to real LLMs (GPT-4o, Claude). Server setup and latency optimization.",
                 phase2Title: "Phase 2: User Core",
                 phase2Desc:
-                    "Implementing authentication, cloud-based message history storage, and personalized style settings for every user.",
-                phase3Title: "Phase 3: Ecosystem Expansion",
+                    "Authentication, cloud message history, and personalized style settings.",
+                phase3Title: "Phase 3: Expansion",
                 phase3Desc:
-                    "Developing browser extensions (Chrome, Edge), plugins for Outlook/Gmail, and integrations with corporate messengers (Slack, Discord).",
-                phase4Title: "Phase 4: Business & Revenue",
+                    "Browser extensions, email plugins, and corporate messenger integrations.",
+                phase4Title: "Phase 4: Scaling",
                 phase4Desc:
-                    "Launching subscription models (Freemium), providing API access for corporate clients, and White-label licensing options.",
-                contactUs: "Contact for Investment",
+                    "Subscription models, business API, and White-label licensing options.",
+                contactUs: "Collaboration & Development",
                 phaseLabel: "Phase",
                 joinBtn: "Join Now",
                 joinCopied: "Email Copied!",
@@ -129,7 +127,7 @@
                 sending: "Sending...",
                 sent: "Message sent!",
                 backToPlatforms: "Back to platforms",
-                revenueTitle: "Revenue Forecast (ARR)",
+                revenueTitle: "Growth Forecast (ARR)",
                 pocLabel: "Current POC",
                 b2cLabel: "B2C Launch",
                 b2bLabel: "Enterprise B2B",
@@ -163,24 +161,24 @@
                 copyBtn: "結果をコピー",
                 copied: "コピーしました！",
                 error: "⚠️ 変換中にエラーが発生しました。",
-                emptyResult: "変換後にここに修正されたテキストが表示されます",
-                roadmapBtn: "投資ロードマップ",
-                roadmapTitle: "ToneWave AI 成長戦略",
+                emptyResult: "ここに修正されたテキストが表示されます",
+                roadmapBtn: "ToneWave AI 成長戦略",
+                roadmapTitle: "ToneWave AI 開発戦略",
                 roadmapIntro:
-                    "ToneWave AIは単なるデモではなく、強力なコミュニケーションエコシステムの基盤です。以下は潜在的な投資家向けののスケーリングプランです。",
-                phase1Title: "フェーズ1: 本番インフラストラクチャ",
+                    "ToneWave AIはエコシステムの基盤です。スケーリングプランと協力の機会は以下の通りです。",
+                phase1Title: "フェーズ1: 基盤構築",
                 phase1Desc:
-                    "シミュレーションからリアルなLLM（GPT-4o、Claude 3.5）への移行。高可用性サーバーの構築と遅延の最適化。",
-                phase2Title: "フェーズ2: ユーザーコア",
+                    "GPT-4o/Claudeへの移行。サーバー構築と遅延の最適化を推進。",
+                phase2Title: "フェーズ2: ユーザー",
                 phase2Desc:
-                    "認証システム、クラウドベースのメッセージ履歴保存、ユーザーごとのパーソナライズされたスタイル設定の実装。",
-                phase3Title: "フェーズ3: エコシステムの拡大",
+                    "認証システム、履歴の同期、カスタムスタイル設定の実装。",
+                phase3Title: "フェーズ3: 拡大",
                 phase3Desc:
-                    "ブラウザ拡張機能（Chrome, Edge）、Outlook/Gmail用プラグインの開発、およびSlack/Discordとの連携。",
-                phase4Title: "フェーズ4: ビジネスと収益",
+                    "ブラウザ拡張、メール機能、Slack/Discord連携の開発。",
+                phase4Title: "フェーズ4: ビジネスと拡大",
                 phase4Desc:
                     "サブスクリプションモデル（Freemium）の開始、企業向けAPIの提供、およびホワイトラベルライセンスのオプション。",
-                contactUs: "投資に関するお問い合わせ",
+                contactUs: "協力と開発",
                 phaseLabel: "フェーズ",
                 joinBtn: "参加する",
                 joinCopied: "メールをコピーしました！",
@@ -195,7 +193,7 @@
                 sending: "送信中...",
                 sent: "メッセージが送信されました！",
                 backToPlatforms: "プラットフォーム選択に戻る",
-                revenueTitle: "収益予測 (ARR)",
+                revenueTitle: "成長予測 (ARR)",
                 pocLabel: "現在のPOC",
                 b2cLabel: "B2Cローンチ",
                 b2bLabel: "エンタープライズB2B",
@@ -564,7 +562,9 @@
             onclick={() => (isRoadmapOpen = true)}
             class="group flex items-center gap-2 px-3 py-1.5 text-[11px] font-black tracking-[0.2em] text-white/30 hover:text-[#2DD4BF]/60 transition-all uppercase"
         >
-            <span class="w-1.5 h-1.5 rounded-full bg-[#2DD4BF] opacity-40 group-hover:opacity-100 group-hover:shadow-[0_0_8px_#2DD4BF] transition-all"></span>
+            <span
+                class="w-1.5 h-1.5 rounded-full bg-[#2DD4BF] opacity-40 group-hover:opacity-100 group-hover:shadow-[0_0_8px_#2DD4BF] transition-all"
+            ></span>
             {t.roadmapBtn}
         </button>
     </div>
@@ -900,78 +900,216 @@
                             </div>
 
                             {#if resultText && !isProcessing}
-                                <div class="mt-6 h-[280px] flex flex-col justify-end" in:fade>
+                                <div
+                                    class="mt-6 h-[280px] flex flex-col justify-end"
+                                    in:fade
+                                >
                                     {#if messageSent}
-                                        <div class="h-full flex items-center justify-center">
-                                            <div class="w-full py-8 rounded-[32px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-black uppercase tracking-[0.2em] flex flex-col items-center justify-center gap-4 transition-all">
-                                                <div class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                                                    <svg class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        <div
+                                            class="h-full flex items-center justify-center"
+                                        >
+                                            <div
+                                                class="w-full py-8 rounded-[32px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-black uppercase tracking-[0.2em] flex flex-col items-center justify-center gap-4 transition-all"
+                                            >
+                                                <div
+                                                    class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"
+                                                >
+                                                    <svg
+                                                        class="w-6 h-6 text-emerald-400"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                    >
+                                                        <path
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M5 13l4 4L19 7"
+                                                        />
                                                     </svg>
                                                 </div>
-                                                <span class="text-xs">{t.sent}</span>
+                                                <span class="text-xs"
+                                                    >{t.sent}</span
+                                                >
                                             </div>
                                         </div>
                                     {:else if !selectedPlatform}
                                         <!-- Platform Selection -->
                                         <div class="space-y-6">
-                                            <p class="text-[9px] font-black text-white/50 uppercase tracking-[0.3em] text-center">
+                                            <p
+                                                class="text-[9px] font-black text-white/50 uppercase tracking-[0.3em] text-center"
+                                            >
                                                 {t.sendTo}
                                             </p>
-                                            <div class="grid grid-cols-3 gap-3 max-w-[360px] mx-auto">
-                                                {#each ['slack', 'telegram', 'teams', 'discord', 'custom'] as platform}
+                                            <div
+                                                class="grid grid-cols-3 gap-3 max-w-[360px] mx-auto"
+                                            >
+                                                {#each ["slack", "telegram", "teams", "discord", "custom"] as platform}
                                                     <button
                                                         onclick={() => {
-                                                            selectedPlatform = platform;
-                                                            if (platform !== 'custom' || customPlatformConnected) {
-                                                                selectedTarget1 = platformData[platform].targets1[0];
-                                                                selectedTarget2 = platformData[platform].targets2[0];
+                                                            selectedPlatform =
+                                                                platform;
+                                                            if (
+                                                                platform !==
+                                                                    "custom" ||
+                                                                customPlatformConnected
+                                                            ) {
+                                                                selectedTarget1 =
+                                                                    platformData[
+                                                                        platform
+                                                                    ]
+                                                                        .targets1[0];
+                                                                selectedTarget2 =
+                                                                    platformData[
+                                                                        platform
+                                                                    ]
+                                                                        .targets2[0];
                                                             }
                                                         }}
-                                                        class="h-20 rounded-2xl bg-white/[0.03] border border-white/5 flex flex-col items-center justify-center gap-2 hover:bg-[#2DD4BF]/10 hover:border-[#2DD4BF]/30 transition-all group {platform === 'custom' && !customPlatformConnected ? 'border-dashed' : ''}"
+                                                        class="h-20 rounded-2xl bg-white/[0.03] border border-white/5 flex flex-col items-center justify-center gap-2 hover:bg-[#2DD4BF]/10 hover:border-[#2DD4BF]/30 transition-all group {platform ===
+                                                            'custom' &&
+                                                        !customPlatformConnected
+                                                            ? 'border-dashed'
+                                                            : ''}"
                                                         title={platform}
                                                     >
-                                                        {#if platform === 'slack'}<svg class="w-7 h-7 opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="currentColor"><path d="M6 15a2 2 0 1 0-2 2h2v-2zm1.5 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-1.5a2 2 0 1 0-2-2 2 2 0 0 0 2 2zM9 15V9a2 2 0 1 0-2 2H9v4a2 2 0 1 0 4 0v-2a2 2 0 1 0-2-2v4zm1.5-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1.5a2 2 0 1 0 2 2 2 2 0 0 0-2-2zm2.5-1.5v6a2 2 0 1 0 2-2h-2v-4a2 2 0 1 0-4 0v2a2 2 0 1 0 2 2v-4zm1.5 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-1.5a2 2 0 1 0-2-2 2 2 0 0 0 2 2zM15 9h6a2 2 0 1 0-2-2v2a2 2 0 1 0 0 4h-2a2 2 0 1 0-2-2V9z"/></svg>{/if}
-                                                        {#if platform === 'telegram'}<svg class="w-7 h-7 opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.39.52-.46-.01-1.33-.26-1.98-.48-.8-.27-1.43-.42-1.37-.89.03-.25.38-.51 1.03-.78 4.04-1.76 6.74-2.92 8.09-3.48 3.85-1.6 4.64-1.88 5.17-1.89.11 0 .37.03.54.17.14.11.18.26.2.38z"/></svg>{/if}
-                                                        {#if platform === 'teams'}<svg class="w-7 h-7 opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="currentColor"><path d="M11 7h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2V9c0-1.1.9-2 2-2zm-7 0h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V9c0-1.1.9-2 2-2zm14 0h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2V9c0-1.1.9-2 2-2zM4 14h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2zm7 0h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2zm7 0h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2z"/></svg>{/if}
-                                                        {#if platform === 'discord'}<svg class="w-7 h-7 opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="currentColor"><path d="M19.27 4.58C17.81 3.91 16.24 3.42 14.59 3.15l-.32.73c-1.82-.27-3.66-.27-5.46 0l-.32-.73c-1.65.27-3.22.76-4.68 1.43-2.93 4.38-3.73 8.66-2.58 12.86 1.95 1.43 3.8 2.3 5.58 2.85l1.31-1.6c-1.18-.35-2.31-.83-3.37-1.44l.28-.2c1.1.56 2.27 1.01 3.49 1.34 1.25.34 2.54.51 3.81.51 1.27 0 2.56-.17 3.81-.51 1.22-.33 2.39-.78 3.49-1.34l.28.2c-1.06.61-2.19 1.09-3.37 1.44l1.31 1.6c1.78-.55 3.63-1.42 5.58-2.85 1.41-5.11.23-9.39-2.58-12.86zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12z"/></svg>{/if}
-                                                        {#if platform === 'custom'}
+                                                        {#if platform === "slack"}<svg
+                                                                class="w-7 h-7 opacity-60 group-hover:opacity-100 transition-opacity"
+                                                                viewBox="0 0 24 24"
+                                                                fill="currentColor"
+                                                                ><path
+                                                                    d="M6 15a2 2 0 1 0-2 2h2v-2zm1.5 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-1.5a2 2 0 1 0-2-2 2 2 0 0 0 2 2zM9 15V9a2 2 0 1 0-2 2H9v4a2 2 0 1 0 4 0v-2a2 2 0 1 0-2-2v4zm1.5-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1.5a2 2 0 1 0 2 2 2 2 0 0 0-2-2zm2.5-1.5v6a2 2 0 1 0 2-2h-2v-4a2 2 0 1 0-4 0v2a2 2 0 1 0 2 2v-4zm1.5 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-1.5a2 2 0 1 0-2-2 2 2 0 0 0 2 2zM15 9h6a2 2 0 1 0-2-2v2a2 2 0 1 0 0 4h-2a2 2 0 1 0-2-2V9z"
+                                                                /></svg
+                                                            >{/if}
+                                                        {#if platform === "telegram"}<svg
+                                                                class="w-7 h-7 opacity-60 group-hover:opacity-100 transition-opacity"
+                                                                viewBox="0 0 24 24"
+                                                                fill="currentColor"
+                                                                ><path
+                                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.39.52-.46-.01-1.33-.26-1.98-.48-.8-.27-1.43-.42-1.37-.89.03-.25.38-.51 1.03-.78 4.04-1.76 6.74-2.92 8.09-3.48 3.85-1.6 4.64-1.88 5.17-1.89.11 0 .37.03.54.17.14.11.18.26.2.38z"
+                                                                /></svg
+                                                            >{/if}
+                                                        {#if platform === "teams"}<svg
+                                                                class="w-7 h-7 opacity-60 group-hover:opacity-100 transition-opacity"
+                                                                viewBox="0 0 24 24"
+                                                                fill="currentColor"
+                                                                ><path
+                                                                    d="M11 7h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2V9c0-1.1.9-2 2-2zm-7 0h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V9c0-1.1.9-2 2-2zm14 0h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2V9c0-1.1.9-2 2-2zM4 14h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2zm7 0h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2zm7 0h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2z"
+                                                                /></svg
+                                                            >{/if}
+                                                        {#if platform === "discord"}<svg
+                                                                class="w-7 h-7 opacity-60 group-hover:opacity-100 transition-opacity"
+                                                                viewBox="0 0 24 24"
+                                                                fill="currentColor"
+                                                                ><path
+                                                                    d="M19.27 4.58C17.81 3.91 16.24 3.42 14.59 3.15l-.32.73c-1.82-.27-3.66-.27-5.46 0l-.32-.73c-1.65.27-3.22.76-4.68 1.43-2.93 4.38-3.73 8.66-2.58 12.86 1.95 1.43 3.8 2.3 5.58 2.85l1.31-1.6c-1.18-.35-2.31-.83-3.37-1.44l.28-.2c1.1.56 2.27 1.01 3.49 1.34 1.25.34 2.54.51 3.81.51 1.27 0 2.56-.17 3.81-.51 1.22-.33 2.39-.78 3.49-1.34l.28.2c-1.06.61-2.19 1.09-3.37 1.44l1.31 1.6c1.78-.55 3.63-1.42 5.58-2.85 1.41-5.11.23-9.39-2.58-12.86zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12z"
+                                                                /></svg
+                                                            >{/if}
+                                                        {#if platform === "custom"}
                                                             {#if customPlatformConnected}
-                                                                <div class="relative">
-                                                                    <svg class="w-7 h-7 text-[#2DD4BF]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                                                                    <div class="absolute -top-1 -right-1 w-2 h-2 bg-[#2DD4BF] rounded-full animate-ping"></div>
+                                                                <div
+                                                                    class="relative"
+                                                                >
+                                                                    <svg
+                                                                        class="w-7 h-7 text-[#2DD4BF]"
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="currentColor"
+                                                                        ><path
+                                                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                                                                        /></svg
+                                                                    >
+                                                                    <div
+                                                                        class="absolute -top-1 -right-1 w-2 h-2 bg-[#2DD4BF] rounded-full animate-ping"
+                                                                    ></div>
                                                                 </div>
                                                             {:else}
-                                                                <svg class="w-7 h-7 opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+                                                                <svg
+                                                                    class="w-7 h-7 opacity-60 group-hover:opacity-100 transition-opacity"
+                                                                    viewBox="0 0 24 24"
+                                                                    fill="none"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="2"
+                                                                    ><path
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round"
+                                                                        d="M12 4v16m8-8H4"
+                                                                    /></svg
+                                                                >
                                                             {/if}
                                                         {/if}
-                                                        <span class="text-[8px] font-black uppercase tracking-widest text-white/60 group-hover:text-[#2DD4BF] transition-colors">
-                                                            {platform === 'custom' && customPlatformConnected ? (customPlatformName || 'Custom App') : (platform === 'custom' ? t.customLabel : platform)}
+                                                        <span
+                                                            class="text-[8px] font-black uppercase tracking-widest text-white/60 group-hover:text-[#2DD4BF] transition-colors"
+                                                        >
+                                                            {platform ===
+                                                                "custom" &&
+                                                            customPlatformConnected
+                                                                ? customPlatformName ||
+                                                                  "Custom App"
+                                                                : platform ===
+                                                                    "custom"
+                                                                  ? t.customLabel
+                                                                  : platform}
                                                         </span>
                                                     </button>
                                                 {/each}
                                             </div>
                                             <!-- Standard Copy Utility -->
-                                            <button 
+                                            <button
                                                 onclick={handleCopy}
                                                 class="w-full flex items-center justify-center gap-2 text-[9px] text-white/40 hover:text-white/80 transition-colors py-2 font-black uppercase tracking-widest border-t border-white/[0.05] mt-2"
                                             >
-                                                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                                                <svg
+                                                    class="w-3 h-3"
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                    stroke="currentColor"
+                                                    ><path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                                                    /></svg
+                                                >
                                                 {copied ? t.copied : t.copyBtn}
                                             </button>
                                         </div>
-                                    {:else if selectedPlatform === 'custom' && !customPlatformConnected}
+                                    {:else if selectedPlatform === "custom" && !customPlatformConnected}
                                         <!-- Custom Setup Form (Step 2.1) -->
-                                        <div class="p-6 rounded-[32px] bg-white/[0.03] border border-white/10 flex flex-col gap-5" in:slide>
-                                            <div class="flex items-center justify-between">
-                                                <div class="flex items-center gap-3">
-                                                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white/40">
-                                                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+                                        <div
+                                            class="p-6 rounded-[32px] bg-white/[0.03] border border-white/10 flex flex-col gap-5"
+                                            in:slide
+                                        >
+                                            <div
+                                                class="flex items-center justify-between"
+                                            >
+                                                <div
+                                                    class="flex items-center gap-3"
+                                                >
+                                                    <div
+                                                        class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white/40"
+                                                    >
+                                                        <svg
+                                                            class="w-4 h-4"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            stroke-width="2"
+                                                            ><path
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round"
+                                                                d="M12 4v16m8-8H4"
+                                                            /></svg
+                                                        >
                                                     </div>
-                                                    <span class="text-xs font-black uppercase tracking-widest text-white/60">{t.customSetupTitle}</span>
+                                                    <span
+                                                        class="text-xs font-black uppercase tracking-widest text-white/60"
+                                                        >{t.customSetupTitle}</span
+                                                    >
                                                 </div>
-                                                <button 
-                                                    onclick={() => selectedPlatform = null}
+                                                <button
+                                                    onclick={() =>
+                                                        (selectedPlatform =
+                                                            null)}
                                                     class="text-[9px] font-black uppercase tracking-widest text-white/20 hover:text-white/40 transition-colors"
                                                 >
                                                     {t.backBtn}
@@ -980,21 +1118,33 @@
 
                                             <div class="space-y-4">
                                                 <div class="space-y-2">
-                                                    <label for="customName" class="text-[9px] font-black uppercase tracking-widest text-white/20 px-1">{t.platformName}</label>
-                                                    <input 
+                                                    <label
+                                                        for="customName"
+                                                        class="text-[9px] font-black uppercase tracking-widest text-white/20 px-1"
+                                                        >{t.platformName}</label
+                                                    >
+                                                    <input
                                                         id="customName"
-                                                        type="text" 
-                                                        bind:value={customPlatformName}
+                                                        type="text"
+                                                        bind:value={
+                                                            customPlatformName
+                                                        }
                                                         placeholder={t.customPlaceholder}
                                                         class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2 text-xs font-bold text-white focus:outline-none focus:border-[#2DD4BF]/50"
                                                     />
                                                 </div>
                                                 <div class="space-y-2">
-                                                    <label for="customEndpoint" class="text-[9px] font-black uppercase tracking-widest text-white/20 px-1">{t.webhookUrl}</label>
-                                                    <input 
+                                                    <label
+                                                        for="customEndpoint"
+                                                        class="text-[9px] font-black uppercase tracking-widest text-white/20 px-1"
+                                                        >{t.webhookUrl}</label
+                                                    >
+                                                    <input
                                                         id="customEndpoint"
-                                                        type="text" 
-                                                        bind:value={customPlatformEndpoint}
+                                                        type="text"
+                                                        bind:value={
+                                                            customPlatformEndpoint
+                                                        }
                                                         placeholder="https://api.yourdomain.com/hook"
                                                         class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2 text-xs font-bold text-white focus:outline-none focus:border-[#2DD4BF]/50"
                                                     />
@@ -1004,13 +1154,20 @@
                                             <div class="flex gap-3">
                                                 <button
                                                     onclick={handleTestConnection}
-                                                    disabled={isTestingConnection || !customPlatformEndpoint}
+                                                    disabled={isTestingConnection ||
+                                                        !customPlatformEndpoint}
                                                     class="flex-1 py-3 bg-white/5 border border-white/10 text-white/60 font-black text-[10px] tracking-widest rounded-xl hover:bg-white/10 transition-all disabled:opacity-30"
                                                 >
                                                     {#if isTestingConnection}
-                                                        <span class="animate-pulse">{t.connecting}</span>
+                                                        <span
+                                                            class="animate-pulse"
+                                                            >{t.connecting}</span
+                                                        >
                                                     {:else if connectionTestSuccess}
-                                                        <span class="text-emerald-400">{t.connectionEstablished}</span>
+                                                        <span
+                                                            class="text-emerald-400"
+                                                            >{t.connectionEstablished}</span
+                                                        >
                                                     {:else}
                                                         {t.testConnection}
                                                     {/if}
@@ -1019,8 +1176,14 @@
                                                     <button
                                                         onclick={() => {
                                                             handleConnectCustom();
-                                                            selectedTarget1 = platformData.custom.targets1[0];
-                                                            selectedTarget2 = platformData.custom.targets2[0];
+                                                            selectedTarget1 =
+                                                                platformData
+                                                                    .custom
+                                                                    .targets1[0];
+                                                            selectedTarget2 =
+                                                                platformData
+                                                                    .custom
+                                                                    .targets2[0];
                                                         }}
                                                         class="px-6 py-3 bg-[#2DD4BF] text-[#050A08] font-black text-[10px] tracking-widest rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all"
                                                         in:fade
@@ -1032,31 +1195,85 @@
                                         </div>
                                     {:else}
                                         <!-- Target Selection (Step 2) -->
-                                        <div class="p-6 rounded-[32px] bg-white/[0.03] border border-white/10 flex flex-col gap-5" in:slide>
-                                            <div class="flex items-center justify-between">
-                                                <div class="flex items-center gap-3">
-                                                    <div class="w-8 h-8 rounded-full bg-[#2DD4BF]/10 flex items-center justify-center text-[#2DD4BF]">
-                                                        {#if selectedPlatform === 'slack'}<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6 15a2 2 0 1 0-2 2h2v-2zm1.5 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-1.5a2 2 0 1 0-2-2 2 2 0 0 0 2 2zM9 15V9a2 2 0 1 0-2 2H9v4a2 2 0 1 0 4 0v-2a2 2 0 1 0-2-2v4zm1.5-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1.5a2 2 0 1 0 2 2 2 2 0 0 0-2-2zm2.5-1.5v6a2 2 0 1 0 2-2h-2v-4a2 2 0 1 0-4 0v2a2 2 0 1 0 2 2v-4zm1.5 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-1.5a2 2 0 1 0-2-2 2 2 0 0 0 2 2zM15 9h6a2 2 0 1 0-2-2v2a2 2 0 1 0 0 4h-2a2 2 0 1 0-2-2V9z"/></svg>{/if}
-                                                        {#if selectedPlatform === 'telegram'}<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.39.52-.46-.01-1.33-.26-1.98-.48-.8-.27-1.43-.42-1.37-.89.03-.25.38-.51 1.03-.78 4.04-1.76 6.74-2.92 8.09-3.48 3.85-1.6 4.64-1.88 5.17-1.89.11 0 .37.03.54.17.14.11.18.26.2.38z"/></svg>{/if}
-                                                        {#if selectedPlatform === 'discord'}<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19.27 4.58C17.81 3.91 16.24 3.42 14.59 3.15l-.32.73c-1.82-.27-3.66-.27-5.46 0l-.32-.73c-1.65.27-3.22.76-4.68 1.43-2.93 4.38-3.73 8.66-2.58 12.86 1.95 1.43 3.8 2.3 5.58 2.85l1.31-1.6c-1.18-.35-2.31-.83-3.37-1.44l.28-.2c1.1.56 2.27 1.01 3.49 1.34 1.25.34 2.54.51 3.81.51 1.27 0 2.56-.17 3.81-.51 1.22-.33 2.39-.78 3.49-1.34l.28.2c-1.06.61-2.19 1.09-3.37 1.44l1.31 1.6c1.78-.55 3.63-1.42 5.58-2.85 1.41-5.11.23-9.39-2.58-12.86zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12z"/></svg>{/if}
-                                                        {#if selectedPlatform === 'teams'}<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M11 7h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2V9c0-1.1.9-2 2-2zm-7 0h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V9c0-1.1.9-2 2-2zm14 0h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2V9c0-1.1.9-2 2-2zM4 14h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2zm17 0h-2c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"/></svg>{/if}
-                                                        {#if selectedPlatform === 'custom'}<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>{/if}
+                                        <div
+                                            class="p-6 rounded-[32px] bg-white/[0.03] border border-white/10 flex flex-col gap-5"
+                                            in:slide
+                                        >
+                                            <div
+                                                class="flex items-center justify-between"
+                                            >
+                                                <div
+                                                    class="flex items-center gap-3"
+                                                >
+                                                    <div
+                                                        class="w-8 h-8 rounded-full bg-[#2DD4BF]/10 flex items-center justify-center text-[#2DD4BF]"
+                                                    >
+                                                        {#if selectedPlatform === "slack"}<svg
+                                                                class="w-4 h-4"
+                                                                viewBox="0 0 24 24"
+                                                                fill="currentColor"
+                                                                ><path
+                                                                    d="M6 15a2 2 0 1 0-2 2h2v-2zm1.5 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-1.5a2 2 0 1 0-2-2 2 2 0 0 0 2 2zM9 15V9a2 2 0 1 0-2 2H9v4a2 2 0 1 0 4 0v-2a2 2 0 1 0-2-2v4zm1.5-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1.5a2 2 0 1 0 2 2 2 2 0 0 0-2-2zm2.5-1.5v6a2 2 0 1 0 2-2h-2v-4a2 2 0 1 0-4 0v2a2 2 0 1 0 2 2v-4zm1.5 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-1.5a2 2 0 1 0-2-2 2 2 0 0 0 2 2zM15 9h6a2 2 0 1 0-2-2v2a2 2 0 1 0 0 4h-2a2 2 0 1 0-2-2V9z"
+                                                                /></svg
+                                                            >{/if}
+                                                        {#if selectedPlatform === "telegram"}<svg
+                                                                class="w-4 h-4"
+                                                                viewBox="0 0 24 24"
+                                                                fill="currentColor"
+                                                                ><path
+                                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.39.52-.46-.01-1.33-.26-1.98-.48-.8-.27-1.43-.42-1.37-.89.03-.25.38-.51 1.03-.78 4.04-1.76 6.74-2.92 8.09-3.48 3.85-1.6 4.64-1.88 5.17-1.89.11 0 .37.03.54.17.14.11.18.26.2.38z"
+                                                                /></svg
+                                                            >{/if}
+                                                        {#if selectedPlatform === "discord"}<svg
+                                                                class="w-4 h-4"
+                                                                viewBox="0 0 24 24"
+                                                                fill="currentColor"
+                                                                ><path
+                                                                    d="M19.27 4.58C17.81 3.91 16.24 3.42 14.59 3.15l-.32.73c-1.82-.27-3.66-.27-5.46 0l-.32-.73c-1.65.27-3.22.76-4.68 1.43-2.93 4.38-3.73 8.66-2.58 12.86 1.95 1.43 3.8 2.3 5.58 2.85l1.31-1.6c-1.18-.35-2.31-.83-3.37-1.44l.28-.2c1.1.56 2.27 1.01 3.49 1.34 1.25.34 2.54.51 3.81.51 1.27 0 2.56-.17 3.81-.51 1.22-.33 2.39-.78 3.49-1.34l.28.2c-1.06.61-2.19 1.09-3.37 1.44l1.31 1.6c1.78-.55 3.63-1.42 5.58-2.85 1.41-5.11.23-9.39-2.58-12.86zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12z"
+                                                                /></svg
+                                                            >{/if}
+                                                        {#if selectedPlatform === "teams"}<svg
+                                                                class="w-4 h-4"
+                                                                viewBox="0 0 24 24"
+                                                                fill="currentColor"
+                                                                ><path
+                                                                    d="M11 7h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2V9c0-1.1.9-2 2-2zm-7 0h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V9c0-1.1.9-2 2-2zm14 0h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2V9c0-1.1.9-2 2-2zM4 14h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2zm17 0h-2c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+                                                                /></svg
+                                                            >{/if}
+                                                        {#if selectedPlatform === "custom"}<svg
+                                                                class="w-4 h-4"
+                                                                viewBox="0 0 24 24"
+                                                                fill="currentColor"
+                                                                ><path
+                                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                                                                /></svg
+                                                            >{/if}
                                                     </div>
-                                                    <span class="text-xs font-black uppercase tracking-widest text-white/60">
-                                                        {selectedPlatform === 'custom' ? (customPlatformName || 'Custom App') : selectedPlatform}
+                                                    <span
+                                                        class="text-xs font-black uppercase tracking-widest text-white/60"
+                                                    >
+                                                        {selectedPlatform ===
+                                                        "custom"
+                                                            ? customPlatformName ||
+                                                              "Custom App"
+                                                            : selectedPlatform}
                                                     </span>
                                                 </div>
-                                                <div class="flex items-center gap-4">
-                                                    {#if selectedPlatform === 'custom'}
-                                                        <button 
+                                                <div
+                                                    class="flex items-center gap-4"
+                                                >
+                                                    {#if selectedPlatform === "custom"}
+                                                        <button
                                                             onclick={handleDisconnectCustom}
                                                             class="text-[9px] font-black uppercase tracking-widest text-red-400/40 hover:text-red-400 transition-colors"
                                                         >
                                                             {t.disconnect}
                                                         </button>
                                                     {/if}
-                                                    <button 
-                                                        onclick={() => selectedPlatform = null}
+                                                    <button
+                                                        onclick={() =>
+                                                            (selectedPlatform =
+                                                                null)}
                                                         class="text-[9px] font-black uppercase tracking-widest text-[#2DD4BF]/40 hover:text-[#2DD4BF] transition-colors"
                                                     >
                                                         {t.backToPlatforms}
@@ -1066,26 +1283,52 @@
 
                                             <div class="grid grid-cols-2 gap-4">
                                                 <div class="space-y-2">
-                                                    <label for="target1" class="text-[9px] font-black uppercase tracking-widest text-white/20 px-1">{t[platformData[selectedPlatform].label1]}</label>
-                                                    <select 
+                                                    <label
+                                                        for="target1"
+                                                        class="text-[9px] font-black uppercase tracking-widest text-white/20 px-1"
+                                                        >{t[
+                                                            platformData[
+                                                                selectedPlatform
+                                                            ].label1
+                                                        ]}</label
+                                                    >
+                                                    <select
                                                         id="target1"
-                                                        bind:value={selectedTarget1}
+                                                        bind:value={
+                                                            selectedTarget1
+                                                        }
                                                         class="w-full bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:outline-none focus:border-[#2DD4BF]/50 appearance-none"
                                                     >
                                                         {#each platformData[selectedPlatform].targets1 as target}
-                                                            <option value={target}>{target}</option>
+                                                            <option
+                                                                value={target}
+                                                                >{target}</option
+                                                            >
                                                         {/each}
                                                     </select>
                                                 </div>
                                                 <div class="space-y-2">
-                                                    <label for="target2" class="text-[9px] font-black uppercase tracking-widest text-white/20 px-1">{t[platformData[selectedPlatform].label2]}</label>
-                                                    <select 
+                                                    <label
+                                                        for="target2"
+                                                        class="text-[9px] font-black uppercase tracking-widest text-white/20 px-1"
+                                                        >{t[
+                                                            platformData[
+                                                                selectedPlatform
+                                                            ].label2
+                                                        ]}</label
+                                                    >
+                                                    <select
                                                         id="target2"
-                                                        bind:value={selectedTarget2}
+                                                        bind:value={
+                                                            selectedTarget2
+                                                        }
                                                         class="w-full bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:outline-none focus:border-[#2DD4BF]/50 appearance-none"
                                                     >
                                                         {#each platformData[selectedPlatform].targets2 as target}
-                                                            <option value={target}>{target}</option>
+                                                            <option
+                                                                value={target}
+                                                                >{target}</option
+                                                            >
                                                         {/each}
                                                     </select>
                                                 </div>
@@ -1097,8 +1340,26 @@
                                                 class="w-full py-4 bg-gradient-to-r from-[#2DD4BF] to-[#0D9488] text-[#050A08] font-black text-[11px] tracking-[0.2em] rounded-2xl shadow-lg transition-all active:scale-[0.98] disabled:opacity-50"
                                             >
                                                 {#if isSendingMessage}
-                                                    <div class="flex items-center justify-center gap-2">
-                                                        <svg class="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                                                    <div
+                                                        class="flex items-center justify-center gap-2"
+                                                    >
+                                                        <svg
+                                                            class="animate-spin h-4 w-4"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            ><circle
+                                                                class="opacity-25"
+                                                                cx="12"
+                                                                cy="12"
+                                                                r="10"
+                                                                stroke="currentColor"
+                                                                stroke-width="4"
+                                                            ></circle><path
+                                                                class="opacity-75"
+                                                                fill="currentColor"
+                                                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                                            ></path></svg
+                                                        >
                                                         {t.sending}
                                                     </div>
                                                 {:else}
@@ -1118,149 +1379,241 @@
 
     <!-- Roadmap Modal -->
     {#if isRoadmapOpen}
-        <div 
+        <div
             class="fixed inset-0 z-[100] flex items-center justify-center p-6 sm:p-10"
             in:fade={{ duration: 300 }}
             out:fade={{ duration: 200 }}
         >
             <!-- Backdrop -->
-            <button 
+            <button
                 class="absolute inset-0 bg-[#050A08]/90 backdrop-blur-2xl cursor-default"
                 onclick={() => (isRoadmapOpen = false)}
                 aria-label="Close modal"
             ></button>
 
             <!-- Modal Content -->
-            <div 
+            <div
                 class="relative w-full max-w-5xl bg-[#0A120E] border border-white/10 rounded-[40px] shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
                 in:fade={{ duration: 400, delay: 100 }}
             >
                 <div class="absolute top-8 right-8 z-10">
-                    <button 
+                    <button
                         onclick={() => (isRoadmapOpen = false)}
                         class="p-2 rounded-full hover:bg-white/5 text-white/40 hover:text-white transition-colors"
                         aria-label="Close roadmap"
                     >
-                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <svg
+                            class="w-8 h-8"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"
+                            />
                         </svg>
                     </button>
                 </div>
 
-                <div class="p-10 sm:p-16 overflow-y-auto custom-scrollbar">
-                    <div class="max-w-3xl">
-                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#2DD4BF]/10 border border-[#2DD4BF]/20 text-[#2DD4BF] text-[10px] font-black tracking-widest uppercase mb-6">
-                            {t.roadmapBtn}
+                <div
+                    class="p-8 sm:p-12 overflow-y-auto custom-scrollbar flex flex-col h-full"
+                >
+                    <div class="flex flex-col h-full">
+                        <div class="flex items-center justify-between mb-8">
+                            <div>
+                                <div
+                                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2DD4BF]/10 border border-[#2DD4BF]/20 text-[#2DD4BF] text-[9px] font-black tracking-widest uppercase mb-3"
+                                >
+                                    {t.roadmapBtn}
+                                </div>
+                                <h2
+                                    class="text-3xl font-black text-white tracking-tight"
+                                >
+                                    {t.roadmapTitle}
+                                </h2>
+                            </div>
                         </div>
-                        <h2 class="text-4xl sm:text-5xl font-black text-white mb-6 leading-tight">
-                            {t.roadmapTitle}
-                        </h2>
-                        <p class="text-xl text-teal-100/60 leading-relaxed mb-12">
-                            {t.roadmapIntro}
-                        </p>
 
-                        <div class="space-y-8">
-                            <!-- Phase cards -->
-                            {#each [
-                                { title: t.phase1Title, desc: t.phase1Desc, phase: "01", icon: "🚀" },
-                                { title: t.phase2Title, desc: t.phase2Desc, phase: "02", icon: "💎" },
-                                { title: t.phase3Title, desc: t.phase3Desc, phase: "03", icon: "🌐" },
-                                { title: t.phase4Title, desc: t.phase4Desc, phase: "04", icon: "💰" }
-                            ] as phase}
-                                <div class="group relative flex gap-8 p-8 rounded-[32px] bg-white/[0.02] border border-white/5 hover:border-[#2DD4BF]/30 transition-all duration-500">
-                                    <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-black/40 border border-white/5 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-500">
+                        <!-- 4-Column Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                            {#each [{ title: t.phase1Title, desc: t.phase1Desc, phase: "01", icon: "🚀" }, { title: t.phase2Title, desc: t.phase2Desc, phase: "02", icon: "💎" }, { title: t.phase3Title, desc: t.phase3Desc, phase: "03", icon: "🌐" }, { title: t.phase4Title, desc: t.phase4Desc, phase: "04", icon: "💰" }] as phase}
+                                <div
+                                    class="group flex flex-col p-5 rounded-[24px] bg-white/[0.02] border border-white/5 hover:border-[#2DD4BF]/30 transition-all duration-500"
+                                >
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-black/40 border border-white/5 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-500"
+                                    >
                                         {phase.icon}
                                     </div>
-                                    <div>
-                                        <div class="flex items-center gap-4 mb-2">
-                                            <span class="text-[#2DD4BF] font-black tracking-widest text-xs uppercase opacity-40">{t.phaseLabel} {phase.phase}</span>
-                                            <div class="h-px flex-grow bg-white/5"></div>
-                                        </div>
-                                        <h3 class="text-2xl font-black text-white mb-3 tracking-tight uppercase">{phase.title}</h3>
-                                        <p class="text-teal-100/40 leading-relaxed text-lg group-hover:text-teal-100/60 transition-colors">
-                                            {phase.desc}
-                                        </p>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span
+                                            class="text-[#2DD4BF] font-black tracking-widest text-[8px] uppercase opacity-40"
+                                            >{t.phaseLabel} {phase.phase}</span
+                                        >
+                                        <div
+                                            class="h-px flex-grow bg-white/5"
+                                        ></div>
                                     </div>
+                                    <h3
+                                        class="text-base font-black text-white mb-2 leading-tight uppercase"
+                                    >
+                                        {phase.title}
+                                    </h3>
+                                    <p
+                                        class="text-teal-100/40 leading-snug text-sm group-hover:text-teal-100/60 transition-colors line-clamp-4"
+                                    >
+                                        {phase.desc}
+                                    </p>
                                 </div>
                             {/each}
                         </div>
 
-                        <!-- Infographic Section -->
-                        <div class="mt-16 p-10 rounded-[48px] bg-white/[0.02] border border-white/5 relative overflow-hidden group/info">
-                            <!-- Background Accent -->
-                            <div class="absolute inset-0 bg-gradient-to-br from-[#2DD4BF]/5 to-transparent opacity-0 group-hover/info:opacity-100 transition-opacity duration-1000"></div>
-
-                            <h4 class="relative z-10 text-[10px] font-black uppercase tracking-[0.4em] text-[#2DD4BF]/60 mb-14 text-center">{t.revenueTitle}</h4>
-                            
-                            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-4">
-                                <!-- Tier 1: POC -->
-                                <div class="flex flex-col items-center gap-6 flex-1 w-full">
-                                    <div class="w-16 h-16 rounded-[24px] bg-white/[0.03] border border-white/10 flex items-center justify-center text-2xl group-hover:bg-white/5 transition-all shadow-xl">🌱</div>
-                                    <div class="text-center">
-                                        <p class="text-[10px] font-black uppercase tracking-widest text-white/20 mb-2">{t.pocLabel}</p>
-                                        <div class="px-4 py-1 rounded-full bg-white/5 border border-white/5">
-                                            <p class="text-xl font-black text-white/90">$0</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Connector 1 -->
-                                <div class="hidden md:block flex-shrink-0 w-8">
-                                    <svg class="w-full text-white/10" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4" /></svg>
-                                </div>
-
-                                <!-- Tier 2: B2C (Featured) -->
-                                <div class="flex flex-col items-center gap-8 flex-1 w-full px-4">
-                                    <div class="relative">
-                                        <div class="absolute inset-0 bg-[#2DD4BF]/20 blur-2xl rounded-full animate-pulse"></div>
-                                        <div class="relative w-24 h-24 rounded-[32px] bg-gradient-to-br from-[#2DD4BF]/20 to-[#0D9488]/10 border border-[#2DD4BF]/40 flex items-center justify-center text-4xl shadow-[0_0_50px_rgba(45,212,191,0.2)] hover:scale-105 transition-transform duration-500 cursor-default">
-                                            🚀
-                                        </div>
-                                    </div>
-                                    <div class="text-center">
-                                        <p class="text-[11px] font-black uppercase tracking-[0.2em] text-[#2DD4BF] mb-2">{t.b2cLabel}</p>
-                                        <div class="px-6 py-2 rounded-full bg-[#2DD4BF]/10 border border-[#2DD4BF]/20 shadow-inner">
-                                            <p class="text-3xl font-black text-white">$850K</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Connector 2 -->
-                                <div class="hidden md:block flex-shrink-0 w-8">
-                                    <svg class="w-full text-white/10" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4" /></svg>
-                                </div>
-
-                                <!-- Tier 3: B2B -->
-                                <div class="flex flex-col items-center gap-6 flex-1 w-full">
-                                    <div class="w-16 h-16 rounded-[24px] bg-white/[0.03] border border-white/10 flex items-center justify-center text-2xl group-hover:bg-white/5 transition-all shadow-xl">🏢</div>
-                                    <div class="text-center">
-                                        <p class="text-[10px] font-black uppercase tracking-widest text-white/20 mb-2">{t.b2bLabel}</p>
-                                        <div class="px-4 py-1 rounded-full bg-white/5 border border-white/5">
-                                            <p class="text-xl font-black text-white/90">$6.5M</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-14 flex items-center gap-8 p-8 rounded-[32px] bg-gradient-to-r from-[#2DD4BF]/10 to-transparent border border-[#2DD4BF]/20">
-                            <div class="flex-grow">
-                                <h4 class="text-xl font-bold text-white mb-2">{t.contactUs}</h4>
-                                <p class="text-teal-100/40 text-sm">maximpiryutko@gmail.com</p>
-                            </div>
-                            <button 
-                                onclick={handleJoinCopy}
-                                class="min-w-[200px] px-8 py-4 {joinEmailCopied ? 'bg-emerald-500 text-white' : 'bg-[#2DD4BF] text-[#050A08]'} font-black text-sm tracking-widest uppercase rounded-2xl hover:shadow-[0_0_30px_rgba(45,212,191,0.4)] transition-all active:scale-95 flex items-center justify-center gap-2"
+                        <!-- Compact Status Bar Growth Forecast -->
+                        <div class="mt-auto">
+                            <div
+                                class="p-6 rounded-[32px] bg-white/[0.02] border border-white/5 relative overflow-hidden group/info mb-6"
                             >
-                                {#if joinEmailCopied}
-                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    {t.joinCopied}
-                                {:else}
-                                    {t.joinBtn}
-                                {/if}
-                            </button>
+                                <div
+                                    class="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-2"
+                                >
+                                    <p
+                                        class="text-[8px] font-black uppercase tracking-[0.3em] text-[#2DD4BF]/60 sm:w-32"
+                                    >
+                                        {t.revenueTitle}
+                                    </p>
+
+                                    <div
+                                        class="flex-grow flex items-center justify-around w-full"
+                                    >
+                                        <!-- Tier 1: POC -->
+                                        <div class="flex items-center gap-3">
+                                            <span class="text-lg">🌱</span>
+                                            <div>
+                                                <p
+                                                    class="text-[8px] font-black uppercase tracking-widest text-white/20"
+                                                >
+                                                    {t.pocLabel}
+                                                </p>
+                                                <p
+                                                    class="text-sm font-black text-white/90"
+                                                >
+                                                    $0
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-8 w-px bg-white/5"></div>
+
+                                        <!-- Tier 2: B2C -->
+                                        <div
+                                            class="flex items-center gap-3 relative"
+                                        >
+                                            <div
+                                                class="absolute inset-0 bg-[#2DD4BF]/10 blur-xl rounded-full"
+                                            ></div>
+                                            <span class="text-lg relative"
+                                                >🚀</span
+                                            >
+                                            <div class="relative">
+                                                <p
+                                                    class="text-[8px] font-black uppercase tracking-[0.2em] text-[#2DD4BF]"
+                                                >
+                                                    {t.b2cLabel}
+                                                </p>
+                                                <p
+                                                    class="text-sm font-black text-white"
+                                                >
+                                                    $850K
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="h-8 w-px bg-white/5"></div>
+
+                                        <!-- Tier 3: B2B -->
+                                        <div class="flex items-center gap-3">
+                                            <span class="text-lg">🏢</span>
+                                            <div>
+                                                <p
+                                                    class="text-[8px] font-black uppercase tracking-widest text-white/20"
+                                                >
+                                                    {t.b2bLabel}
+                                                </p>
+                                                <p
+                                                    class="text-sm font-black text-white/90"
+                                                >
+                                                    $6.5M
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Footer Contact -->
+                            <div
+                                class="flex items-center justify-between gap-6 p-6 rounded-[24px] bg-gradient-to-r from-[#2DD4BF]/10 to-transparent border border-[#2DD4BF]/20"
+                            >
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-black/40 border border-white/5 flex items-center justify-center text-teal-400"
+                                    >
+                                        <svg
+                                            class="w-5 h-5"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="text-sm font-bold text-white mb-0.5"
+                                        >
+                                            {t.contactUs}
+                                        </h4>
+                                        <p
+                                            class="text-[#2DD4BF]/60 text-[10px] font-bold tracking-wider"
+                                        >
+                                            maximpiryutko@gmail.com
+                                        </p>
+                                    </div>
+                                </div>
+                                <button
+                                    onclick={handleJoinCopy}
+                                    class="px-6 py-3 {joinEmailCopied
+                                        ? 'bg-emerald-500 text-white'
+                                        : 'bg-[#2DD4BF] text-[#050A08]'} font-black text-[10px] tracking-widest uppercase rounded-xl hover:shadow-[0_0_20px_rgba(45,212,191,0.3)] transition-all active:scale-95 flex items-center gap-2"
+                                >
+                                    {#if joinEmailCopied}
+                                        <svg
+                                            class="w-4 h-4"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M5 13l4 4L19 7"
+                                            />
+                                        </svg>
+                                        {t.joinCopied}
+                                    {:else}
+                                        {t.joinBtn}
+                                    {/if}
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
