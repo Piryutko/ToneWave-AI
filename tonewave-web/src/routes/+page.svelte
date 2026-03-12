@@ -28,6 +28,18 @@
             copied: "Скопировано!",
             error: "⚠️ Возникла ошибка при трансформации сообщения.",
             emptyResult: "Здесь появится исправленный текст после запуска трансформации",
+            roadmapBtn: "Инвестиционный план",
+            roadmapTitle: "Стратегия развития ToneWave AI",
+            roadmapIntro: "ToneWave AI — это не просто демо, а фундамент для мощной экосистемы коммуникаций. Ниже представлен план масштабирования проекта для потенциальных инвесторов.",
+            phase1Title: "Фаза 1: Продакшн-инфраструктура",
+            phase1Desc: "Переход от симуляции к реальным LLM (GPT-4o, Claude 3.5). Настройка отказоустойчивых серверов и оптимизация задержек (Latency).",
+            phase2Title: "Фаза 2: Пользовательское ядро",
+            phase2Desc: "Внедрение системы авторизации, облачного хранения истории сообщений и персональных настроек стиля для каждого пользователя.",
+            phase3Title: "Фаза 3: Экспансия экосистемы",
+            phase3Desc: "Разработка расширений для браузеров (Chrome, Edge), плагинов для Outlook/Gmail и интеграция с корпоративными мессенджерами (Slack, Discord).",
+            phase4Title: "Фаза 4: Бизнес и монетизация",
+            phase4Desc: "Запуск модели подписок (Freemium), предоставление API для корпоративных клиентов и возможность White-label лицензирования.",
+            contactUs: "Связаться для инвестиций",
         },
         EN: {
             appTitle: "ToneWave AI",
@@ -48,6 +60,18 @@
             copied: "Copied!",
             error: "⚠️ An error occurred during transformation.",
             emptyResult: "Corrected text will appear here after transformation",
+            roadmapBtn: "Investment Roadmap",
+            roadmapTitle: "ToneWave AI Growth Strategy",
+            roadmapIntro: "ToneWave AI is not just a demo, but the foundation for a powerful communication ecosystem. Below is the scaling plan for potential investors.",
+            phase1Title: "Phase 1: Production Infrastructure",
+            phase1Desc: "Transition from simulation to real LLMs (GPT-4o, Claude 3.5). Setting up high-availability servers and latency optimization.",
+            phase2Title: "Phase 2: User Core",
+            phase2Desc: "Implementing authentication, cloud-based message history storage, and personalized style settings for every user.",
+            phase3Title: "Phase 3: Ecosystem Expansion",
+            phase3Desc: "Developing browser extensions (Chrome, Edge), plugins for Outlook/Gmail, and integrations with corporate messengers (Slack, Discord).",
+            phase4Title: "Phase 4: Business & Revenue",
+            phase4Desc: "Launching subscription models (Freemium), providing API access for corporate clients, and White-label licensing options.",
+            contactUs: "Contact for Investment",
         },
         JP: {
             appTitle: "ToneWave AI",
@@ -68,6 +92,18 @@
             copied: "コピーしました！",
             error: "⚠️ 変換中にエラーが発生しました。",
             emptyResult: "変換後にここに修正されたテキストが表示されます",
+            roadmapBtn: "投資ロードマップ",
+            roadmapTitle: "ToneWave AI 成長戦略",
+            roadmapIntro: "ToneWave AIは単なるデモではなく、強力なコミュニケーションエコシステムの基盤です。以下は潜在的な投資家向けののスケーリングプランです。",
+            phase1Title: "フェーズ1: 本番インフラストラクチャ",
+            phase1Desc: "シミュレーションからリアルなLLM（GPT-4o、Claude 3.5）への移行。高可用性サーバーの構築と遅延の最適化。",
+            phase2Title: "フェーズ2: ユーザーコア",
+            phase2Desc: "認証システム、クラウドベースのメッセージ履歴保存、ユーザーごとのパーソナライズされたスタイル設定の実装。",
+            phase3Title: "フェーズ3: エコシステムの拡大",
+            phase3Desc: "ブラウザ拡張機能（Chrome, Edge）、Outlook/Gmail用プラグインの開発、およびSlack/Discordとの連携。",
+            phase4Title: "フェーズ4: ビジネスと収益",
+            phase4Desc: "サブスクリプションモデル（Freemium）の開始、企業向けAPIの提供、およびホワイトラベルライセンスのオプション。",
+            contactUs: "投資に関するお問い合わせ",
         },
     }[currentLang]);
 
@@ -150,6 +186,7 @@
     let resultText = $state("");
     let isProcessing = $state(false);
     let copied = $state(false);
+    let isRoadmapOpen = $state(false);
 
     async function handleCopy() {
         if (!resultText) return;
@@ -199,6 +236,20 @@
             style="animation-delay: 2s"
         ></div>
     </div>
+
+    <!-- Investment Badge -->
+    <button
+        onclick={() => (isRoadmapOpen = true)}
+        class="fixed bottom-8 right-8 z-40 group flex items-center gap-3 px-6 py-3 bg-white/[0.03] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/5 hover:border-[#2DD4BF]/30 transition-all active:scale-95 shadow-lg shadow-black/20"
+    >
+        <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2DD4BF] opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-[#2DD4BF]"></span>
+        </span>
+        <span class="text-[11px] font-black tracking-widest text-teal-100/60 group-hover:text-[#2DD4BF] uppercase transition-colors">
+            {t.roadmapBtn}
+        </span>
+    </button>
 
     <!-- Language Switcher -->
     <div class="fixed top-6 right-8 z-50 flex items-center gap-1.5 p-1 bg-white/[0.03] border border-white/10 rounded-full backdrop-blur-md">
@@ -579,9 +630,106 @@
             </div>
         {/if}
     </div>
+
+    <!-- Roadmap Modal -->
+    {#if isRoadmapOpen}
+        <div 
+            class="fixed inset-0 z-[100] flex items-center justify-center p-6 sm:p-10"
+            in:fade={{ duration: 300 }}
+            out:fade={{ duration: 200 }}
+        >
+            <!-- Backdrop -->
+            <button 
+                class="absolute inset-0 bg-[#050A08]/90 backdrop-blur-2xl cursor-default"
+                onclick={() => (isRoadmapOpen = false)}
+                aria-label="Close modal"
+            ></button>
+
+            <!-- Modal Content -->
+            <div 
+                class="relative w-full max-w-5xl bg-[#0A120E] border border-white/10 rounded-[40px] shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+                in:fade={{ duration: 400, delay: 100 }}
+            >
+                <div class="absolute top-8 right-8 z-10">
+                    <button 
+                        onclick={() => (isRoadmapOpen = false)}
+                        class="p-2 rounded-full hover:bg-white/5 text-white/40 hover:text-white transition-colors"
+                        aria-label="Close roadmap"
+                    >
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="p-10 sm:p-16 overflow-y-auto custom-scrollbar">
+                    <div class="max-w-3xl">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#2DD4BF]/10 border border-[#2DD4BF]/20 text-[#2DD4BF] text-[10px] font-black tracking-widest uppercase mb-6">
+                            Investment Roadmap
+                        </div>
+                        <h2 class="text-4xl sm:text-5xl font-black text-white mb-6 leading-tight">
+                            {t.roadmapTitle}
+                        </h2>
+                        <p class="text-xl text-teal-100/60 leading-relaxed mb-12">
+                            {t.roadmapIntro}
+                        </p>
+
+                        <div class="space-y-8">
+                            <!-- Phase cards -->
+                            {#each [
+                                { title: t.phase1Title, desc: t.phase1Desc, phase: "01", icon: "🚀" },
+                                { title: t.phase2Title, desc: t.phase2Desc, phase: "02", icon: "💎" },
+                                { title: t.phase3Title, desc: t.phase3Desc, phase: "03", icon: "🌐" },
+                                { title: t.phase4Title, desc: t.phase4Desc, phase: "04", icon: "💰" }
+                            ] as phase}
+                                <div class="group relative flex gap-8 p-8 rounded-[32px] bg-white/[0.02] border border-white/5 hover:border-[#2DD4BF]/30 transition-all duration-500">
+                                    <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-black/40 border border-white/5 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-500">
+                                        {phase.icon}
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-4 mb-2">
+                                            <span class="text-[#2DD4BF] font-black tracking-widest text-xs uppercase opacity-40">Phase {phase.phase}</span>
+                                            <div class="h-px flex-grow bg-white/5"></div>
+                                        </div>
+                                        <h3 class="text-2xl font-black text-white mb-3 tracking-tight uppercase">{phase.title}</h3>
+                                        <p class="text-teal-100/40 leading-relaxed text-lg group-hover:text-teal-100/60 transition-colors">
+                                            {phase.desc}
+                                        </p>
+                                    </div>
+                                </div>
+                            {/each}
+                        </div>
+
+                        <div class="mt-16 flex items-center gap-8 p-8 rounded-[32px] bg-gradient-to-r from-[#2DD4BF]/10 to-transparent border border-[#2DD4BF]/20">
+                            <div class="flex-grow">
+                                <h4 class="text-xl font-bold text-white mb-2">{t.contactUs}</h4>
+                                <p class="text-teal-100/40 text-sm">piruytko.invest@tonewave.ai</p>
+                            </div>
+                            <button class="px-8 py-4 bg-[#2DD4BF] text-[#050A08] font-black text-sm tracking-widest uppercase rounded-2xl hover:shadow-[0_0_30px_rgba(45,212,191,0.4)] transition-all active:scale-95">
+                                Join Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {/if}
 </main>
 
 <style>
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(45, 212, 191, 0.1);
+        border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(45, 212, 191, 0.3);
+    }
     ::-webkit-scrollbar {
         width: 4px;
     }
