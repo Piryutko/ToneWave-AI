@@ -5,6 +5,144 @@
     } from "$lib/simulation";
     import { fade, slide } from "svelte/transition";
 
+    type Language = "RU" | "EN" | "JP";
+    let currentLang = $state<Language>("RU");
+
+    const t = $derived({
+        RU: {
+            appTitle: "ToneWave AI",
+            appDesc: "AI-редактор коммуникаций",
+            heroTitle: "ToneWave",
+            heroSub: "Conceptual Demo",
+            heroBody: "Превратите любые искренние эмоции в дипломатичный и конструктивный диалог. Решайте конфликты профессионально.",
+            startBtn: "Начать работу",
+            backBtn: "Назад",
+            templates: "Шаблоны",
+            originalMsg: "Оригинальное сообщение",
+            placeholder: "Выберите шаблон...",
+            styleTitle: "Стиль трансформации",
+            transformBtn: "ТРАНСФОРМИРОВАТЬ",
+            processing: "Обработка...",
+            resultTitle: "Результат",
+            copyBtn: "Копировать результат",
+            copied: "Скопировано!",
+            error: "⚠️ Возникла ошибка при трансформации сообщения.",
+            emptyResult: "Здесь появится исправленный текст после запуска трансформации",
+        },
+        EN: {
+            appTitle: "ToneWave AI",
+            appDesc: "AI Communication Editor",
+            heroTitle: "ToneWave",
+            heroSub: "Conceptual Demo",
+            heroBody: "Turn any sincere emotions into diplomatic and constructive dialogue. Resolve conflicts professionally.",
+            startBtn: "Get Started",
+            backBtn: "Back",
+            templates: "Templates",
+            originalMsg: "Original Message",
+            placeholder: "Select a template...",
+            styleTitle: "Transformation Style",
+            transformBtn: "TRANSFORM",
+            processing: "Processing...",
+            resultTitle: "Result",
+            copyBtn: "Copy Result",
+            copied: "Copied!",
+            error: "⚠️ An error occurred during transformation.",
+            emptyResult: "Corrected text will appear here after transformation",
+        },
+        JP: {
+            appTitle: "ToneWave AI",
+            appDesc: "AI コミュニケーションエディタ",
+            heroTitle: "ToneWave",
+            heroSub: "Conceptual Demo",
+            heroBody: "どんな感情も、外交的で建設的な対話に変えましょう。プロフェッショナルに紛争を解決します。",
+            startBtn: "使ってみる",
+            backBtn: "戻る",
+            templates: "テンプレート",
+            originalMsg: "元のメッセージ",
+            placeholder: "テンプレートを選択してください...",
+            styleTitle: "変換スタイル",
+            transformBtn: "変換する",
+            processing: "処理中...",
+            resultTitle: "結果",
+            copyBtn: "結果をコピー",
+            copied: "コピーしました！",
+            error: "⚠️ 変換中にエラーが発生しました。",
+            emptyResult: "変換後にここに修正されたテキストが表示されます",
+        },
+    }[currentLang]);
+
+    const modes: {
+        id: TransformMode;
+        icon: string;
+        labels: Record<Language, { title: string; desc: string }>;
+    }[] = [
+        {
+            id: "PROFESSIONAL",
+            icon: "👔",
+            labels: {
+                RU: { title: "Professional", desc: "Деловой стиль" },
+                EN: { title: "Professional", desc: "Business style" },
+                JP: { title: "プロフェッショナル", desc: "ビジネススタイル" },
+            },
+        },
+        {
+            id: "KIND",
+            icon: "💖",
+            labels: {
+                RU: { title: "Kind", desc: "Эмпатия" },
+                EN: { title: "Kind", desc: "Empathy" },
+                JP: { title: "親切", desc: "共感" },
+            },
+        },
+        {
+            id: "TECHNICAL",
+            icon: "⚙️",
+            labels: {
+                RU: { title: "Technical", desc: "Аналитика" },
+                EN: { title: "Technical", desc: "Analytic" },
+                JP: { title: "テクニカル", desc: "分析的" },
+            },
+        },
+        {
+            id: "LACONIC",
+            icon: "⚡",
+            labels: {
+                RU: { title: "Laconic", desc: "Коротко" },
+                EN: { title: "Laconic", desc: "Concise" },
+                JP: { title: "簡潔", desc: "短文" },
+            },
+        },
+    ];
+
+    const allTemplates: Record<Language, { title: string; text: string; icon: string; desc: string }[]> = {
+        RU: [
+            { title: "Гневный крик", text: "ПОЧЕМУ НИЧЕГО НЕ ГОТОВО?", icon: "🤬", desc: "Эмоциональный запрос" },
+            { title: "Паника", text: "ЗАКАЗЧИК РУГАЕТСЯ ПОЧЕМУ УПАЛ ПРОДАКШЕН!?", icon: "🚨", desc: "Сообщение о сбое" },
+            { title: "Агрессия", text: "ПОЧЕМУ ЭФФЕКТИВНОСТЬ КОМАНДЫ НИЗКАЯ?!", icon: "😤", desc: "Прямая претензия" },
+            { title: "Сарказм", text: "Опять переделывать? Вы вообще умеете читать ТЗ?", icon: "😒", desc: "Недовольство качеством" },
+            { title: "Ультиматум", text: "Если к завтра к утру не будет готово, я подниму вопрос о компетенции.", icon: "😠", desc: "Жесткое требование" },
+            { title: "Раздражение", text: "Давайте уже работать, а не болтать.", icon: "🙄", desc: "Усталость от созвонов" },
+        ],
+        EN: [
+            { title: "Angry Shout", text: "WHY IS NOTHING READY YET?", icon: "🤬", desc: "Emotional request" },
+            { title: "Panic", text: "THE CLIENT IS ANGRY WHY IS PRODUCTION DOWN!?", icon: "🚨", desc: "Outage report" },
+            { title: "Aggression", text: "WHY IS TEAM EFFICIENCY SO LOW?!", icon: "😤", desc: "Direct complaint" },
+            { title: "Sarcasm", text: "Redoing it again? Can you even read the specs?", icon: "😒", desc: "Quality dissatisfaction" },
+            { title: "Ultimatum", text: "If this isn't fixed by morning, I'll report your competence.", icon: "😠", desc: "Hard deadline" },
+            { title: "Irritation", text: "Let's just work and stop talking.", icon: "🙄", desc: "Meeting fatigue" },
+        ],
+        JP: [
+            { title: "怒りの叫び", text: "なぜまだ何も終わっていないのですか？", icon: "🤬", desc: "感情的な要求" },
+            { title: "パニック", text: "顧客が怒っています！なぜ本番環境が落ちているのですか！？", icon: "🚨", desc: "障害報告" },
+            { title: "攻撃性", text: "なぜチームの効率がこんなに低いのですか！？", icon: "😤", desc: "直接的な不満" },
+            { title: "皮肉", text: "またやり直しですか？仕様書を読めますか？", icon: "😒", desc: "品質への不満" },
+            { title: "最後通牒", text: "明日の朝までに修正されない場合、進退を問います。", icon: "😠", desc: "厳しい要求" },
+            { title: "苛立ち", text: "おしゃべりはやめて、仕事をしましょう。", icon: "🙄", desc: "会議疲れ" },
+        ],
+    };
+
+    const templates = $derived(allTemplates[currentLang]);
+
     let showApp = $state(false);
     let rawText = $state("");
     let selectedMode = $state<TransformMode>("PROFESSIONAL");
@@ -24,72 +162,6 @@
         }
     }
 
-    const modes: {
-        id: TransformMode;
-        icon: string;
-        label: string;
-        desc: string;
-    }[] = [
-        {
-            id: "PROFESSIONAL",
-            icon: "👔",
-            label: "Professional",
-            desc: "Деловой стиль",
-        },
-        { id: "KIND", icon: "💖", label: "Kind", desc: "Эмпатия" },
-        {
-            id: "TECHNICAL",
-            icon: "⚙️",
-            label: "Technical",
-            desc: "Аналитика",
-        },
-        {
-            id: "LACONIC",
-            icon: "⚡",
-            label: "Laconic",
-            desc: "Коротко",
-        },
-    ];
-
-    const templates = [
-        {
-            title: "Гневный крик",
-            text: "ПОЧЕМУ НИЧЕГО НЕ ГОТОВО?",
-            icon: "🤬",
-            desc: "Эмоциональный запрос",
-        },
-        {
-            title: "Паника",
-            text: "ЗАКАЗЧИК РУГАЕТСЯ ПОЧЕМУ УПАЛ ПРОДАКШЕН!?",
-            icon: "🚨",
-            desc: "Сообщение о сбое",
-        },
-        {
-            title: "Агрессия",
-            text: "ПОЧЕМУ ЭФФЕКТИВНОСТЬ КОМАНДЫ НИЗКАЯ?! ВЫ ЧТО НЕ МОЖЕТЕ СПИСАТЬСЯ И ЗА ТРИ МИНУТЫ РЕШИТ ВОПРОС??",
-            icon: "😤",
-            desc: "Прямая претензия к команде",
-        },
-        {
-            title: "Сарказм",
-            text: "Опять переделывать? Вы вообще умеете читать ТЗ с первого раза?",
-            icon: "😒",
-            desc: "Недовльство качеством работы",
-        },
-        {
-            title: "Ультиматум",
-            text: "Если к завтрашнему утру баг не будет исправлен, я буду вынужден поднять вопрос о вашей компетенции.",
-            icon: "😠",
-            desc: "Жесткое требование правок",
-        },
-        {
-            title: "Раздражение",
-            text: "Сколько можно обсуждать одно и то же на созвонах? Давайте уже работать, а не болтать.",
-            icon: "🙄",
-            desc: "Усталость от совещаний",
-        },
-    ];
-
     async function handleTransform() {
         if (!rawText.trim() || isProcessing) return;
 
@@ -97,13 +169,13 @@
         resultText = "";
 
         try {
-            const stream = simulateStreamingResponse(rawText, selectedMode);
+            const stream = simulateStreamingResponse(rawText, selectedMode, currentLang);
             for await (const chunk of stream) {
                 resultText += chunk;
             }
         } catch (err) {
             console.error(err);
-            resultText = "⚠️ Возникла ошибка при трансформации сообщения.";
+            resultText = t.error;
         } finally {
             isProcessing = false;
         }
@@ -128,6 +200,21 @@
         ></div>
     </div>
 
+    <!-- Language Switcher -->
+    <div class="fixed top-6 right-8 z-50 flex items-center gap-1.5 p-1 bg-white/[0.03] border border-white/10 rounded-full backdrop-blur-md">
+        {#each ["RU", "EN", "JP"] as lang}
+            <button
+                onclick={() => (currentLang = lang as Language)}
+                class="px-3 py-1 rounded-full text-[10px] font-black tracking-widest transition-all
+                    {currentLang === lang 
+                        ? 'bg-[#2DD4BF] text-[#050A08] shadow-[0_0_15px_rgba(45,212,191,0.3)]' 
+                        : 'text-white/30 hover:text-white/60'}"
+            >
+                {lang}
+            </button>
+        {/each}
+    </div>
+
     <div class="grid grid-cols-1 grid-rows-1 h-full w-full">
         {#if !showApp}
             <!-- Лэндинг -->
@@ -144,7 +231,7 @@
                     ></span>
                     <span
                         class="text-sm font-medium tracking-wide text-teal-50/80 uppercase"
-                        >AI-редактор коммуникаций</span
+                        >{t.appDesc}</span
                     >
                 </div>
 
@@ -153,7 +240,7 @@
                 >
                     <span
                         class="text-transparent bg-clip-text bg-gradient-to-br from-white via-teal-100 to-teal-800"
-                        style="padding-bottom: 0.1em;">ToneWave</span
+                        style="padding-bottom: 0.1em;">{t.heroTitle}</span
                     >
                     <span
                         class="text-transparent bg-clip-text bg-gradient-to-r from-[#2DD4BF] to-teal-400"
@@ -162,7 +249,7 @@
                     <span
                         class="block text-[10px] uppercase tracking-[0.4em] text-white/30 font-medium mt-2"
                     >
-                        Conceptual Demo
+                        {t.heroSub}
                     </span>
                     <a
                         href="https://github.com/Piryutko"
@@ -177,8 +264,7 @@
                 <p
                     class="text-lg md:text-2xl text-teal-100/60 font-medium max-w-2xl mb-14 leading-relaxed"
                 >
-                    Превратите любые искренние эмоции в дипломатичный и
-                    конструктивный диалог. Решайте конфликты профессионально.
+                    {t.heroBody}
                 </p>
 
                 <button
@@ -186,7 +272,7 @@
                     class="group relative overflow-hidden bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-2xl text-white font-bold text-lg md:text-xl py-5 px-14 rounded-[32px] shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(45,212,191,0.2)] hover:border-[#2DD4BF]/50 active:scale-95"
                 >
                     <span class="relative z-10 flex items-center gap-3">
-                        Начать работу
+                        {t.startBtn}
                         <svg
                             class="w-6 h-6 transition-transform group-hover:translate-x-1 text-[#2DD4BF]"
                             fill="none"
@@ -231,18 +317,18 @@
                                 d="M10 19l-7-7m0 0l7-7m-7 7h18"
                             />
                         </svg>
-                        Назад
+                        {t.backBtn}
                     </button>
 
                     <h1 class="text-3xl font-black tracking-tight text-center">
                         <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-white to-teal-200"
-                            >ToneWave AI</span
+                            >{t.appTitle}</span
                         >
                         <div class="flex flex-col items-center mt-2 gap-1">
                             <span
                                 class="text-[10px] uppercase tracking-[0.4em] text-white/20 font-medium"
-                                >Conceptual Demo</span
+                                >{t.heroSub}</span
                             >
                             <a
                                 href="https://github.com/Piryutko"
@@ -266,7 +352,7 @@
                             <p
                                 class="text-[12px] font-black text-teal-100/40 mb-5 uppercase tracking-[0.2em] px-1"
                             >
-                                Шаблоны
+                                {t.templates}
                             </p>
                             <div
                                 class="space-y-2 overflow-y-auto pr-1 flex-grow"
@@ -314,13 +400,13 @@
                                 for="message"
                                 class="block text-[12px] font-black text-teal-100/40 mb-4 uppercase tracking-[0.2em] px-1"
                             >
-                                Оригинальное сообщение
+                                {t.originalMsg}
                             </label>
                             <textarea
                                 id="message"
                                 bind:value={rawText}
                                 readonly
-                                placeholder="Выберите шаблон..."
+                                placeholder={t.placeholder}
                                 class="w-full bg-black/40 text-teal-50/90 border border-white/5 rounded-[20px] p-5 h-[140px] focus:ring-1 focus:ring-[#2DD4BF]/30 transition resize-none placeholder-teal-800/40 outline-none text-lg cursor-default"
                             ></textarea>
                         </div>
@@ -332,7 +418,7 @@
                             <p
                                 class="text-[12px] font-black text-teal-100/40 mb-4 uppercase tracking-[0.2em] px-1"
                             >
-                                Стиль трансформации
+                                {t.styleTitle}
                             </p>
                             <div class="grid grid-cols-2 gap-4 mb-5">
                                 {#each modes as mode}
@@ -347,11 +433,11 @@
                                         >
                                         <span
                                             class="font-bold text-slate-100 text-[15px]"
-                                            >{mode.label}</span
+                                            >{mode.labels[currentLang].title}</span
                                         >
                                         <span
                                             class="text-[12px] text-teal-100/30 uppercase tracking-tighter"
-                                            >{mode.desc}</span
+                                            >{mode.labels[currentLang].desc}</span
                                         >
                                     </button>
                                 {/each}
@@ -386,10 +472,10 @@
                                                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                             ></path>
                                         </svg>
-                                        <span>Обработка...</span>
+                                        <span>{t.processing}</span>
                                     {:else}
                                         <span class="opacity-80">✨</span>
-                                        <span>ТРАНСФОРМИРОВАТЬ</span>
+                                        <span>{t.transformBtn}</span>
                                     {/if}
                                 </span>
 
@@ -429,7 +515,7 @@
                                             />
                                         </svg>
                                     </span>
-                                    Результат
+                                    {t.resultTitle}
                                 </h2>
                             </div>
 
@@ -453,8 +539,7 @@
                                             >🌊</span
                                         >
                                         <p class="text-[15px] max-w-[260px]">
-                                            Здесь появится исправленный текст
-                                            после запуска трансформации
+                                            {t.emptyResult}
                                         </p>
                                     </div>
                                 {/if}
@@ -464,17 +549,27 @@
                                 <button
                                     onclick={handleCopy}
                                     class="mt-5 w-full py-5 rounded-[20px] border transition-all font-black uppercase tracking-widest flex items-center justify-center gap-3
-                                        {copied 
-                                            ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400' 
+                                        {copied
+                                            ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400'
                                             : 'bg-white/5 border-white/10 text-teal-100/60 hover:bg-white/10 hover:border-white/20'}"
                                 >
                                     {#if copied}
-                                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        <svg
+                                            class="w-5 h-5"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M5 13l4 4L19 7"
+                                            />
                                         </svg>
-                                        Скопировано!
+                                        {t.copied}
                                     {:else}
-                                        Копировать результат
+                                        {t.copyBtn}
                                     {/if}
                                 </button>
                             {/if}
