@@ -1,29 +1,75 @@
-# ToneWave AI 🌊 (POC Edition)
+# ToneWave AI 🌊 (Conceptual POC)
 
-> *Ваш личный дипломат: превращает эмоции в конструктив*
+[Russian (RU)](#russian-ru) | [English (EN)](#english-en) | [Japanese (JP)](#japanese-jp)
 
-**ToneWave AI** — это инновационный Proof of Concept (POC). Это демонстрационная версия веб-приложения, которое имитирует работу ИИ-переводчика, преобразуя резкие или эмоциональные высказывания в вежливый и профессиональный текст.
+---
 
-## 🚀 Возможности (Simulation Mode)
+## English (EN)
 
-Приложение предлагает современный, реактивный веб-интерфейс с поддержкой 4 режимов трансформации:
-- 👔 **PROFESSIONAL**: Деловой стиль и конструктив. Идеально для бизнес-переписки.
-- 💖 **KIND**: Максимальная эмпатия и поддержка.
-- ⚙️ **TECHNICAL**: Строгая и сухая аналитика. Удаляет эмоции, оставляя чистые факты.
-- ⚡ **LACONIC**: Сжатие до одной мощной и емкой фразы.
+### **Your Digital Diplomat: Translating Emotions into Constructive Outcome**
 
-*Ключевая фича:* Эффект потоковой генерации текста ("typing effect") для максимальной плавности и скорости интерфейса.
+**ToneWave AI** is an innovative Proof of Concept (POC) designed to bridge the gap between human emotional volatility and professional communication standards. In a world of instant messaging, it serves as a "safety buffer," ensuring your message is heard exactly as intended—without the destructive edge of frustration or anger.
 
-## 🏗 Архитектура
+### 🚩 Problems We Solve
+*   **Emotional Escalation**: Prevents immediate, emotionally-charged responses from damaging relationships.
+*   **Communication Gaps**: Translates raw, unpolished thoughts into culturally and professionally appropriate dialogue.
+*   **Context Mismatch**: Adapts the same core message for different platforms (Slack, Discord, Telegram) and audiences.
 
-Проект полностью переведен на **Frontend-only POC** архитектуру:
-- **`tonewave-web`**: Построен на **SvelteKit 5** + **TypeScript**.
-- **Styling**: Используется **Tailwind CSS v4** с эффектами Glassmorphism.
-- **Simulation**: Логика трансформации вынесена на фронтенд для мгновенной демонстрации без необходимости в сервере.
+### 🚀 Key Features (Simulation Mode)
+*   **Multi-Mode Transformation**: 4 distinct AI personas (Professional, Kind, Technical, Laconic).
+*   **Premium UI/UX**: Glassmorphism design with reactive animations and real-time streaming effects.
+*   **Messenger Ecosystem**: Simulated integration with Slack, Telegram, MS Teams, and Discord.
+*   **Enterprise Extensibility**: "Custom Connection" demo for integrating any third-party webhook.
+*   **Investment Plan**: Built-in roadmap and ROI infographics for potential stakeholders.
 
-## 📦 Запуск
+### 📦 Tech Stack
+*   **Framework**: SvelteKit 5 + TypeScript
+*   **Styling**: Tailwind CSS v4
+*   **Architecture**: Frontend-only POC (Instant demonstration capabilities)
 
-Для запуска демонстрации не требуется Docker или .NET сервер:
+---
+
+## Russian (RU)
+
+### **Ваш цифровой дипломат: превращаем эмоции в конструктивный результат**
+
+**ToneWave AI** — это инновационный концепт (POC), призванный объединить человеческую искренность и стандарты профессионального общения. В эпоху мгновенных сообщений он служит «буфером безопасности», гарантируя, что ваша мысль будет услышана именно так, как вы планировали — без разрушительного влияния мимолетных эмоций.
+
+### 🚩 Какие проблемы мы решаем
+*   **Эмоциональная эскалация**: Предотвращает конфликты, вызванные резкими, необдуманными ответами.
+*   **Коммуникационные барьеры**: Переводит сырые, эмоциональные мысли в культурный и профессиональный диалог.
+*   **Разница контекстов**: Адаптирует одно и то же сообщение под стиль разных платформ (Slack, Discord, Telegram).
+
+### 🚀 Основные возможности
+*   **4 Режима трансформации**: Professional (Бизнес), Kind (Эмпатия), Technical (Факты), Laconic (Краткость).
+*   **Premium интерфейс**: Современный дизайн в стиле Glassmorphism с плавными анимациями.
+*   **Экосистема мессенджеров**: Симуляция отправки в Slack, Telegram, Teams и Discord.
+*   **Гибкая интеграция**: Демо-режим подключения собственных сервисов через вебхуки.
+*   **Роадмап для инвесторов**: Встроенный план развития с инфографикой ARR.
+
+---
+
+## Japanese (JP)
+
+### **デジタル外交官：感情を建設的な対話へ**
+
+**ToneWave AI** は、人間の感情的な衝動とプロフェッショナルなコミュニケーションのギャップを埋めるために設計された革新的な Proof of Concept (POC) です。即時性が求められる現代のメッセージングにおいて、フラストレーションや怒りによるコミュニケーションの破綻を防ぐ「セーフティバッファ」として機能します。
+
+### 🚩 解決する課題
+*   **感情的なエスカレーション**: 感情に任せた返信が人間関係を損なうのを防ぎます。
+*   **コミュニケーションギャップ**: 生々しい感情的な思考を、文化的・専門的に適切な対話に翻訳します。
+*   **コンテキストの不一致**: 同じメッセージを異なるプラットフォーム（Slack, Discord, Telegram）や相手に合わせて最適化します。
+
+### 🚀 主な機能
+*   **マルチモード変換**: 4つのAIペルソナ（プロフェッショナル、親切、テクニカル、簡潔）。
+*   **プレミアムUI/UX**: グラスモーフィズムを採用したモダンなデザインと、リアルタイムのタイピングエフェクト。
+*   **メッセンジャー連携**: Slack、Telegram、Teams、Discordへの送信シミュレーション。
+*   **エンタープライズ拡張性**: サードパーティのウェブフックを統合するカスタム接続デモ。
+*   **投資ロードマップ**: 将来の成長戦略と収益予測のインフォグラフィック。
+
+---
+
+## 🛠 Getting Started
 
 ```bash
 cd tonewave-web
@@ -31,8 +77,7 @@ npm install
 npm run dev
 ```
 
-Откройте `http://localhost:5173`, и ToneWave AI готов к показу!
+Open `http://localhost:5173` to explore the future of AI-driven communications.
 
-## 📝 Лицензия
-
+## 📝 License
 MIT License
