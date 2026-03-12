@@ -237,33 +237,31 @@
         ></div>
     </div>
 
-    <!-- Investment Badge -->
-    <button
-        onclick={() => (isRoadmapOpen = true)}
-        class="fixed bottom-8 right-8 z-40 group flex items-center gap-3 px-6 py-3 bg-white/[0.03] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/5 hover:border-[#2DD4BF]/30 transition-all active:scale-95 shadow-lg shadow-black/20"
-    >
-        <span class="relative flex h-3 w-3">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2DD4BF] opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-[#2DD4BF]"></span>
-        </span>
-        <span class="text-[11px] font-black tracking-widest text-teal-100/60 group-hover:text-[#2DD4BF] uppercase transition-colors">
-            {t.roadmapBtn}
-        </span>
-    </button>
+    <!-- Desktop Controls (Top Right) -->
+    <div class="fixed top-6 right-8 z-50 flex flex-col items-end gap-3">
+        <!-- Language Switcher -->
+        <div class="flex items-center gap-1.5 p-1 bg-white/[0.03] border border-white/10 rounded-full backdrop-blur-md">
+            {#each ["RU", "EN", "JP"] as lang}
+                <button
+                    onclick={() => (currentLang = lang as Language)}
+                    class="px-3 py-1 rounded-full text-[10px] font-black tracking-widest transition-all
+                        {currentLang === lang 
+                            ? 'bg-[#2DD4BF] text-[#050A08] shadow-[0_0_15px_rgba(45,212,191,0.3)]' 
+                            : 'text-white/30 hover:text-white/60'}"
+                >
+                    {lang}
+                </button>
+            {/each}
+        </div>
 
-    <!-- Language Switcher -->
-    <div class="fixed top-6 right-8 z-50 flex items-center gap-1.5 p-1 bg-white/[0.03] border border-white/10 rounded-full backdrop-blur-md">
-        {#each ["RU", "EN", "JP"] as lang}
-            <button
-                onclick={() => (currentLang = lang as Language)}
-                class="px-3 py-1 rounded-full text-[10px] font-black tracking-widest transition-all
-                    {currentLang === lang 
-                        ? 'bg-[#2DD4BF] text-[#050A08] shadow-[0_0_15px_rgba(45,212,191,0.3)]' 
-                        : 'text-white/30 hover:text-white/60'}"
-            >
-                {lang}
-            </button>
-        {/each}
+        <!-- Investment Badge (Stubtle) -->
+        <button
+            onclick={() => (isRoadmapOpen = true)}
+            class="group flex items-center gap-2 px-3 py-1.5 text-[9px] font-bold tracking-[0.2em] text-white/20 hover:text-[#2DD4BF] transition-all uppercase"
+        >
+            <span class="w-1 h-1 rounded-full bg-current opacity-50"></span>
+            {t.roadmapBtn}
+        </button>
     </div>
 
     <div class="grid grid-cols-1 grid-rows-1 h-full w-full">
