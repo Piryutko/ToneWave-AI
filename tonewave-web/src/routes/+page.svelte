@@ -1,13 +1,14 @@
 <script lang="ts">
+    import { simulateStreamingResponse, type TransformMode } from "$lib/simulation";
     import { fade, slide } from "svelte/transition";
 
     let showApp = $state(false);
     let rawText = $state("");
-    let selectedMode = $state("PROFESSIONAL");
+    let selectedMode = $state<TransformMode>("PROFESSIONAL");
     let resultText = $state("");
     let isProcessing = $state(false);
 
-    const modes = [
+    const modes: { id: TransformMode; icon: string; label: string; desc: string }[] = [
         {
             id: "PROFESSIONAL",
             icon: "👔",
@@ -29,6 +30,27 @@
         },
     ];
 
+    const templates = [
+        {
+            title: "Гневный крик",
+            text: "ПОЧЕМУ НИЧЕГО НЕ ГОТОВО?",
+            icon: "🤬",
+            desc: "Эмоциональное требование статуса",
+        },
+        {
+            title: "Паника",
+            text: "ЗАКАЗЧИК РУГАЕТСЯ ПОЧЕМУ УПАЛ ПРОДАКШЕН!?",
+            icon: "🚨",
+            desc: "Хаотичное сообщение о сбое",
+        },
+        {
+            title: "Агрессия",
+            text: "ПОЧЕМУ ЭФФЕКТИВНОСТЬ КОМАНДЫ НИЗКАЯ?! ВЫ ЧТО НЕ МОЖЕТЕ СПИСАТЬСЯ И ЗА ТРИ МИНУТЫ РЕШИТ ВОПРОС??",
+            icon: "😤",
+            desc: "Прямая претензия к команде",
+        },
+    ];
+
     async function handleTransform() {
         if (!rawText.trim() || isProcessing) return;
 
@@ -36,49 +58,11 @@
         resultText = "";
 
         try {
-            const apiUrl =
-                import.meta.env.VITE_API_URL || "http://localhost:5000";
-            const response = await fetch(`${apiUrl}/api/transform`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    text: rawText,
-                    mode: selectedMode,
-                }),
-            });
-
-            if (!response.ok || !response.body) {
-                throw new Error("Failed to connect to backend");
-            }
-
-            const reader = response.body.getReader();
-            const decoder = new TextDecoder("utf-8");
-
-            while (true) {
-                const { value, done } = await reader.read();
-                if (done) break;
-
-                const chunk = decoder.decode(value, { stream: true });
-                // Parse SSE lines. Format: data: {"response":"..."}\n\n or just plain text from our backend.
-                // Our backend sends `data: {line}\n\n`
-                const lines = chunk.split("\n");
-                for (const line of lines) {
-                    if (line.startsWith("data: ")) {
-                        const dataContent = line.substring(6);
-
-                        try {
-                            const parsed = JSON.parse(dataContent);
-                            if (parsed.response) {
-                                resultText += parsed.response;
-                            } else if (parsed.error) {
-                                resultText += `\nError: ${parsed.error}`;
-                            }
-                        } catch {
-                            // If it's not JSON, it might just be the raw text depending on how Ollama streamed it
-                            resultText += dataContent;
-                        }
-                    }
-                }
+            // POC Transformation: Using simulated streaming instead of real backend
+            const stream = simulateStreamingResponse(rawText, selectedMode);
+            
+            for await (const chunk of stream) {
+                resultText += chunk;
             }
         } catch (err) {
             console.error(err);
@@ -197,6 +181,51 @@
             <!-- Left Column: Input and Controls -->
             <div class="lg:col-span-5 space-y-6">
                 <div
+                    class="bg-white/5 backdrop-blur-2xl border border-white/10 saturate-150 rounded-[24px] p-6 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+                >
+                    <p
+                        class="block text-sm font-bold text-teal-100/70 mb-4 uppercase tracking-wider"
+                    >
+                        Шаблоны
+                    </p>
+                    <div class="space-y-3">
+                        {#each templates as template}
+                            <button
+                                onclick={() => (rawText = template.text)}
+                                class="w-full flex items-center gap-4 p-4 rounded-[20px] bg-black/20 border border-white/5 hover:bg-[#2DD4BF]/10 hover:border-[#2DD4BF]/30 transition-all text-left group relative overflow-hidden active:scale-[0.98]"
+                            >
+                                <span
+                                    class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform shadow-inner border border-white/5"
+                                >
+                                    {template.icon}
+                                </span>
+                                <div class="flex-grow min-w-0">
+                                    <p class="font-bold text-slate-100 text-sm mb-0.5 truncate uppercase tracking-tight">
+                                        {template.title}
+                                    </p>
+                                    <p class="text-[11px] text-teal-100/50 group-hover:text-teal-100/70 transition-colors line-clamp-1">
+                                        {template.desc}
+                                    </p>
+                                </div>
+                                <svg
+                                    class="w-5 h-5 text-teal-100/20 group-hover:text-[#2DD4BF] transition-colors"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M9 5l7 7-7 7"
+                                    />
+                                </svg>
+                            </button>
+                        {/each}
+                    </div>
+                </div>
+
+                <div
                     class="bg-white/5 backdrop-blur-2xl border border-white/10 saturate-150 rounded-[24px] p-6 shadow-[0_8px_32px_rgba(0,0,0,0.4)] transition-all"
                 >
                     <label
@@ -208,8 +237,9 @@
                     <textarea
                         id="message"
                         bind:value={rawText}
-                        placeholder="Введите текст, который нужно смягчить..."
-                        class="w-full bg-[#0A120E]/50 text-teal-50 border border-white/10 rounded-[20px] p-5 min-h-[160px] focus:ring-2 focus:ring-[#2DD4BF]/50 focus:border-transparent transition resize-none placeholder-teal-700/50 outline-none saturate-100"
+                        readonly
+                        placeholder="Выберите один из сценариев выше..."
+                        class="w-full bg-[#0A120E]/30 text-teal-50/70 border border-white/10 rounded-[20px] p-5 min-h-[140px] focus:ring-1 focus:ring-[#2DD4BF]/30 focus:border-transparent transition resize-none placeholder-teal-800/50 outline-none saturate-100 cursor-default"
                     ></textarea>
                 </div>
 
