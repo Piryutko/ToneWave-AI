@@ -103,7 +103,7 @@
 </svelte:head>
 
 <main
-    class="relative w-full h-screen overflow-hidden bg-[#050A08] text-teal-50 font-sans selection:bg-[#2DD4BF]/30"
+    class="relative w-full h-screen overflow-hidden bg-[#0A120E] text-teal-50 font-sans selection:bg-[#2DD4BF]/30"
 >
     <!-- Background Glows -->
     <div class="fixed inset-0 pointer-events-none">
@@ -249,7 +249,7 @@
                     <!-- Col 1: Templates -->
                     <div class="lg:col-span-3 lg:h-[640px] flex flex-col">
                         <div
-                            class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[28px] p-6 shadow-2xl h-full flex flex-col"
+                            class="border border-white/10 rounded-[28px] p-6 h-full flex flex-col"
                         >
                             <p
                                 class="text-[12px] font-black text-teal-100/40 mb-5 uppercase tracking-[0.2em] px-1"
@@ -296,7 +296,7 @@
                     <div class="lg:col-span-4 flex flex-col gap-3">
                         <!-- Input Area -->
                         <div
-                            class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[20px] p-4 shadow-2xl"
+                            class="border border-white/10 rounded-[20px] p-4"
                         >
                             <label
                                 for="message"
@@ -315,7 +315,7 @@
 
                         <!-- Style Selection -->
                         <div
-                            class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[20px] p-4 shadow-2xl flex flex-col"
+                            class="border border-white/10 rounded-[20px] p-4 flex flex-col"
                         >
                             <p
                                 class="text-[12px] font-black text-teal-100/40 mb-4 uppercase tracking-[0.2em] px-1"
@@ -392,7 +392,7 @@
                     <!-- Col 3: Results -->
                     <div class="lg:col-span-5 lg:h-[640px] flex flex-col">
                         <div
-                            class="bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[32px] p-8 h-full shadow-2xl relative overflow-hidden flex flex-col"
+                            class="border border-white/10 rounded-[32px] p-8 h-full relative overflow-hidden flex flex-col"
                         >
                             <div
                                 class="flex items-center justify-between mb-5 pb-5 border-b border-white/5"
